@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+ApplicationRecord.transaction do 
+  User.create!(
+    name: 'Demo-man', 
+    email: 'demo@user.io', 
+    password: 'password'
+  )
+  puts 'Created demo user!'
+end
