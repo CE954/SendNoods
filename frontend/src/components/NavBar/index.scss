@@ -42,10 +42,24 @@
 
         #cart {
             font-size: 1.6em;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
         }
 
-        #cart:hover {
-            cursor: pointer;
+        #search {
+            font-size: 1.5em;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        :nth-last-child(2):hover {
+            transform: scale(1.1);
         }
     }
 }
@@ -126,6 +140,10 @@
             width: 5em;
             a {
                 display: none;
+            }
+
+            #search {
+                display: none;  
             }
         }
     }

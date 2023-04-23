@@ -44,6 +44,9 @@ const NavBar = () => {
             <div id='nav-bar-right'>
                 <NavLink to='/products'>SHOP NOW</NavLink>
                 <NavLink to='/about'>OUR STORY</NavLink>
+                <div id='search'>
+                    <FaSearch/>
+                </div>
                 {sessionUser ? 
                     <NavLink to='/account'><FaUser/></NavLink> :
                     <NavLink to='/login'><FaUser/></NavLink>
