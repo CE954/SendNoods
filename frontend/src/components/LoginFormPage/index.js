@@ -3,7 +3,7 @@ import loginCartoon from '../../assets/noodleGuy.jpg'
 import * as sessionActions from '../../store/session';
 import {useDispatch, useSelector} from 'react-redux'
 import './index.scss';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 
 
 const LoginFormPage = () => {
@@ -13,7 +13,7 @@ const LoginFormPage = () => {
     const [email, setEmail] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to='/' />; // change to grab cart items 
+    if (sessionUser) return <Redirect to='/'/>; // change to grab cart items 
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -32,6 +32,11 @@ const LoginFormPage = () => {
             });
     }
 
+    const handleDemo = e => {
+        e.preventDefault()
+        return dispatch(sessionActions.login({ email: "demo@user.io", password: "password" }))
+    }
+
     return ( 
         <>
             <div className="login-form-container">
@@ -43,6 +48,7 @@ const LoginFormPage = () => {
                             type='text' 
                             placeholder='email'
                             required
+                            onChange={e => setEmail(e.target.value)}
                             />
                     </div>
                     <div id='login-password'>
@@ -51,7 +57,20 @@ const LoginFormPage = () => {
                             type='password' 
                             placeholder='password'
                             required
+                            onChange={e => setPassword(e.target.value)}
                             />
+                    </div>
+                    <div id='login-errors'>
+                        {errors.map((error, idx) => <div key={idx}>{error}</div>)}
+                    </div>
+                    <div id='login-button' onClick={handleSubmit}>
+                        <button>Log In</button>
+                    </div>
+                    <div id='demo-login' onClick={handleDemo}>
+                        <button>Log in as demo user</button>
+                    </div>
+                    <div id='signup-link'>
+                        <NavLink to='/signup'>Need to create an account?</NavLink>
                     </div>
                 </form>
             </div>
