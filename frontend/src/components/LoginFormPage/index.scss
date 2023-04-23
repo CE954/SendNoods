@@ -123,3 +123,9 @@
     }
 
 }
+
+@media all and (max-height: 800px) {
+    #login-cartoon {
+        display: none;
+    }
+}

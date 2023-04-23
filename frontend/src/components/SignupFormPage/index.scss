@@ -131,3 +131,9 @@
     }
 
 }
+
+@media all and (max-height: 800px) {
+    #signup-cartoon {
+        display: none;
+    }
+}
