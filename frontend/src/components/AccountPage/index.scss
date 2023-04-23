@@ -1,0 +1,35 @@
+.account-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+
+    h1 {
+        font-size: 5em;
+        font-family: T-Star Bold;
+        margin-bottom: 6vh;
+        text-align: center;
+        color: var(--off-black);
+        letter-spacing: .015em;
+    }
+
+    #account-buttons {
+        margin-top: 3vh;
+        display: flex;
+        align-items: center;
+
+        button {
+            font-size: 2em;
+            font-family: T-Star Bold;
+            border: none;
+            background: none;
+            color: var(--off-black);
+        }
+
+        button:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

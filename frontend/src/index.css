@@ -1,1 +1,19 @@
 /* TODO Add site wide styles */
+
+@font-face {
+    font-family: HWT Artz;
+    src: url(../src/fonts/HWT\ Artz\ W00\ Regular.ttf);
+}
+@font-face {
+    font-family: T-Star Bold;
+    src: url(../src/fonts/TSTAR\ W00\ Bold.ttf);
+}
+
+@font-face {
+    font-family: T-Star Regular;
+    src: url(../src/fonts/TSTAR\ PRO\ W00\ Regular.ttf);
+}
+
+:root {
+    --off-black: #1d1e1c;
+}

@@ -1,11 +1,11 @@
-#login-form-container {
+#signup-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-#login-form {
+#signup-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,9 +16,11 @@
         font-size: 5em;
         font-family: T-Star Bold;
         margin-bottom: 6vh;
-        text-align: center;
+        display: flex;
+        justify-content: center;
         color: var(--off-black);
         letter-spacing: .015em;
+        white-space: nowrap;
     }
 
     div {
@@ -32,13 +34,14 @@
     text-align: center;
     margin-top: 1vh;
     margin-bottom: 1vh;
+
     a {
         text-decoration: none;
         color: var(--off-black);
     }
 }
 
-#login-errors div {
+#signup-errors div {
     font-size: 1.25rem;
     font-family: T-Star Regular;
     text-align: center;
@@ -47,13 +50,13 @@
     color: red;
 }
 
-#login-form ::placeholder {
+#signup-form ::placeholder {
     font-family: T-Star Regular;
 }
 
 
-#login-form input,
-#login-form button {
+#signup-form input,
+#signup-form button {
     font-family: T-Star Regular;
     text-align: center;
     letter-spacing: 0.03em;
@@ -64,27 +67,27 @@
     width: stretch;
 }
 
-#login-form button {
+#signup-form button {
     font-family: T-Star Bold;
     background-color: #ffffff;
     border: 2px solid var(--off-black);
     transition: 0.5s;
 }
 
-#login-form button:hover {
+#signup-form button:hover {
     cursor: pointer;
     background-color: var(--off-black);
     color: #ffffff;
 }
 
-#login-form input {
+#signup-form input {
     background-color: #ececec;
     border: 0;
     outline: 0;
     text-transform: none;
 }
 
-#login-cartoon {
+#signup-cartoon {
     position: absolute;
     width: 132px;
     height: 212.45px;
@@ -94,29 +97,34 @@
 
 @media all and (max-width: 1024px) {
 
-    #login-form {
+    #signup-form h1 {
+        text-align: center;
+        white-space: normal;
+    }
+
+    #signup-form {
         width: 60vw;
     }
-    
-    #login-header {
+
+    #signup-header {
         font-size: 5em;
     }
-    
-    
-    #login-form input,
-    #login-form button,
+
+
+    #signup-form input,
+    #signup-form button,
     #signup-link {
         font-size: 1em;
         margin-bottom: 2vh;
         padding: 1.5vh 0;
         border-radius: 10vh;
     }
-    
-    #login-component {
+
+    #signup-component {
         padding-top: 5vh;
     }
 
-    #login-cartoon {
+    #signup-cartoon {
         position: absolute;
         right: 2%;
         bottom: 0.5%;

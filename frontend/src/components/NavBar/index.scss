@@ -1,0 +1,43 @@
+#nav-bar {
+    border-bottom: 1px solid black;
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+
+    #nav-bar-left {
+        display: flex;
+        align-items: center;
+        margin-left: 2em;
+        #logo {
+            height: 2.5em;
+        }
+    }
+
+    #nav-bar-right {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 35em;
+
+        a {
+            text-decoration: none;
+            color: var(--off-black);
+            font-size: 1.5em;
+            font-family: T-Star Bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #cart {
+            font-size: 1.6em;
+        }
+
+        #cart:hover {
+            cursor: pointer;
+        }
+    }
+}

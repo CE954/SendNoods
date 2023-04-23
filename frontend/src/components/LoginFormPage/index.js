@@ -39,38 +39,38 @@ const LoginFormPage = () => {
 
     return ( 
         <>
-            <div className="login-form-container">
-                <form className="login-form" onSubmit={handleSubmit}>
-                    <h1 id='login-header'>Log In</h1>
-                    <div id='login-email'> 
+            <div id="login-form-container">
+                <form id="login-form" onSubmit={handleSubmit}>
+                    <h1 id='login-header'>LOGIN</h1>
+                    <div className='login-input'> 
                         <input 
-                            id='login-email'
                             type='text' 
-                            placeholder='email'
-                            required
+                            placeholder='EMAIL ADDRESS'
+                            value = {email}
                             onChange={e => setEmail(e.target.value)}
-                            />
-                    </div>
-                    <div id='login-password'>
-                        <input 
-                            id='login-password' 
-                            type='password' 
-                            placeholder='password'
                             required
+                        />
+                    </div>
+                    <div className='login-input'>
+                        <input 
+                            type='password' 
+                            placeholder='PASSWORD'
+                            value = {password}
                             onChange={e => setPassword(e.target.value)}
-                            />
+                            required
+                        />
                     </div>
                     <div id='login-errors'>
                         {errors.map((error, idx) => <div key={idx}>{error}</div>)}
                     </div>
-                    <div id='login-button' onClick={handleSubmit}>
-                        <button>Log In</button>
+                    <div id='login-button'>
+                        <button type='submit'>LOG IN</button>
                     </div>
                     <div id='demo-login' onClick={handleDemo}>
-                        <button>Log in as demo user</button>
+                        <button>LOG IN AS DEMO USER</button>
                     </div>
                     <div id='signup-link'>
-                        <NavLink to='/signup'>Need to create an account?</NavLink>
+                        <NavLink to='/signup'>NEED TO CREATE AN ACCOUNT?</NavLink>
                     </div>
                 </form>
             </div>
