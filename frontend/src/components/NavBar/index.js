@@ -5,12 +5,16 @@ import { useSelector } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
 import { FaShoppingCart } from 'react-icons/fa';
+import { GoThreeBars } from 'react-icons/go';
 
 const NavBar = () => {
     const sessionUser = useSelector(state => state.session.user);
 
     return (
         <div id='nav-bar'>
+            <div id='hamburger'> 
+                <GoThreeBars/>
+            </div>
             <div id='nav-bar-left'>
                 <NavLink to='/' exact={true}>
                     <img id='logo' src={logo} alt='logo'/>     

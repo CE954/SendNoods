@@ -6,6 +6,14 @@
     display: flex;
     justify-content: space-between;
 
+    #hamburger{
+        display: none;
+    }
+
+    #hamburger:hover {
+        cursor: pointer;
+    }
+
     #nav-bar-left {
         display: flex;
         align-items: center;
@@ -38,6 +46,35 @@
 
         #cart:hover {
             cursor: pointer;
+        }
+    }
+}
+
+@media all and (max-width: 1000px) {
+    #nav-bar {
+        justify-content: space-between;
+
+        #hamburger{
+            display: flex;
+            font-size: 2em;
+            color: var(--off-black);
+            justify-content: center;
+            align-items: center;
+            width: 2em;
+        }
+
+        #nav-bar-left {
+            margin-left: 1em;
+            #logo {
+                height: 5em;
+                content: url('../../assets/SmallLogo.png');
+            }
+        }
+        #nav-bar-right {
+            width: 5em;
+            a {
+                display: none;
+            }
         }
     }
 }
