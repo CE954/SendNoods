@@ -1,8 +1,15 @@
 import './index.scss';
 import { NavLink } from 'react-router-dom';
 import splashImg from '../../assets/splash-img.png';
+import Splash2 from './splash-2';
+import { useEffect } from 'react';
 
 const HomePage = () => {
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <>
@@ -21,6 +28,9 @@ const HomePage = () => {
                 <div id='splash-img'>
                     <img src={splashImg} alt='splash-img' />
                 </div>
+            </div>
+            <div className = 'splash-2'>
+                <Splash2 />
             </div>
         </>
     )
