@@ -22,6 +22,7 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     # has_many :reviews,
+    # has_many :cart_items,
 
 
     def self.find_by_credentials(email, password)
