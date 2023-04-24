@@ -1,5 +1,5 @@
 import './index.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../../assets/BigLogo.png'
 import { useSelector } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
@@ -10,6 +10,15 @@ import { GrFormClose } from 'react-icons/gr';
 
 const NavBar = () => {
     const sessionUser = useSelector(state => state.session.user);
+    const location = useLocation();
+
+    const navColor = () => {
+        if (location.pathname === '/') {
+            return 'orange';
+        } else if (location.pathname === '/login') {
+            return 'white';
+        }
+    }
 
     const toggleSideMenu = () => {
         const sideNav = document.querySelector('.side-nav');
@@ -17,7 +26,7 @@ const NavBar = () => {
     }
 
     return (
-        <div id='nav-bar'>
+        <div id='nav-bar' className={navColor()}>
             <div className='hamburger'> 
                 <GoThreeBars id='burger-icon' onClick={toggleSideMenu}/>
                 <div className='side-nav'>

@@ -1,14 +1,15 @@
 .account-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 60vh;
+    height: 90vh;
 
     h1 {
         font-size: 5em;
         font-family: T-Star Bold;
-        margin-bottom: 6vh;
+        margin-top: 16vh;
+        margin-bottom: 5vh;
         text-align: center;
         color: var(--off-black);
         letter-spacing: .015em;
@@ -30,6 +31,25 @@
         button:hover {
             text-decoration: underline;
             cursor: pointer;
+        }
+    }
+
+    #account-cartoon {
+        position: absolute;
+        bottom: 20%;
+        left: 7%;
+        height: 15em;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .account-container {
+        h1 {
+            font-size: 3em;
+        }
+
+        #account-cartoon {
+            display: none
         }
     }
 }

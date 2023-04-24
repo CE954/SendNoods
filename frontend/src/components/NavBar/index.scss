@@ -5,6 +5,7 @@
     height: 5em;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
 
     .hamburger{
         display: none;
@@ -62,6 +63,14 @@
             transform: scale(1.1);
         }
     }
+}
+
+.orange {
+    background-color: var(--main-orange);
+}
+
+.white {
+    background-color: white;
 }
 
 @media all and (max-width: 1000px) {

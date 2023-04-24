@@ -2,6 +2,7 @@ import "./index.scss";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import accountCartoon from '../../assets/noodleGuy2.jpg'
 
 const AccountPage = () => {
     const dispatch = useDispatch();
@@ -17,12 +18,15 @@ const AccountPage = () => {
     }
 
     return (
+        <>
         <div className="account-container">
             <h1>Hello {sessionUser.name}!</h1>
             <div id='account-buttons'>
                 <button onClick={logout}>Logout</button>
             </div>
+        <img id='account-cartoon' src={accountCartoon} alt='noodle guy'/>
         </div>
+        </>
     )
 };
 
