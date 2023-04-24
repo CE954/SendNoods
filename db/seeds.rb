@@ -7,8 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'open-uri'
 
-ApplicationRecord.transaction do 
-  # use rails db:replant to reset the database
+# ApplicationRecord.transaction do 
 
   puts "resetting primary keys..."
   ApplicationRecord.connection.reset_pk_sequence!('users')
@@ -21,15 +20,15 @@ ApplicationRecord.transaction do
     password: 'password'
   )
   puts 'Done!'
-end
+# end
 
 # noodles
 
-product1 = Product.create!(
+product1 = Product.create!({
   name: 'Noods Variety Pack',
   description: "Pack of 6, 2 of each of our signature flavors: Smoky Mushroom & Miso, Yellow Curry, and Spicy Kimchi.",
   price: 30.00
-)
+})
 file1 = URI.open('https://sendnoods-bucket.s3.us-west-1.amazonaws.com/noodle-6-pack.jpg')
 product1.photo.attach(io: file1, filename: 'noodle-6-pack.jpg')
 
