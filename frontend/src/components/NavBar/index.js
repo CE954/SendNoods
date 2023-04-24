@@ -17,6 +17,10 @@ const NavBar = () => {
             return 'orange';
         } else if (location.pathname === '/login') {
             return 'white';
+        } else if (location.pathname === '/signup') {
+            return 'white';
+        } else if (location.pathname === '/account') {
+            return 'white';
         }
     }
 
