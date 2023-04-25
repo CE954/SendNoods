@@ -7,6 +7,7 @@ import SignupFormPage from './components/SignupFormPage';
 import AccountPage from './components/AccountPage';
 import Footer from './components/Footer';
 import ProductIndexPage from './components/ProductIndexPage';
+import ProductShowPage from './components/ProductShowPage';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path='/products'>
             <ProductIndexPage />
+          </Route>
+          <Route exact path='/products/:productId'>
+            <ProductShowPage />
           </Route>
         </Switch>
       <Footer/>

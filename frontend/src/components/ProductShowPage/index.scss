@@ -1,0 +1,73 @@
+.product-show-container {
+    display: flex;
+    align-items: center;
+}
+
+#product-show-image {
+    img {
+        height: 80vh;
+        margin: 15vh 5vw;
+        border-radius: 5vw;
+    }
+}
+
+#product-show-info {
+    height: 35vh;
+    width: 45vw;
+
+    div {
+        margin: 2vh 0;
+    }
+
+    #product-show-name {
+        font-size: 3em;
+        font-family: "T-Star Bold";
+        text-transform: uppercase;
+    }
+
+    #product-show-desc {
+        font-size: 1.3em;
+        font-family: 'T-Star Regular';
+    }
+
+    #product-show-price {
+        font-size: 2em;
+        font-family: 'T-Star Bold';
+    }
+}
+
+@media all and (max-width: 1045px) {
+    .product-show-container {
+            display: flex;
+            flex-direction: column;
+    }
+    
+    #product-show-image {
+        img {
+            height: 60vh;
+            margin: 13vh 5vw;
+            margin-bottom: 1vh;
+            border-radius: 5vw;
+        }
+    }
+
+    #product-show-info {
+        height: 35vh;
+        width: 80%;
+        text-align: center;
+
+    }
+}
+
+@media all and (max-width: 515px) {
+    #product-show-image {
+        img {
+            height: 50vh;
+            width: 85vw;
+        }
+    }
+    
+    .product-show-container {
+        font-size: 0.8em;
+    }
+}

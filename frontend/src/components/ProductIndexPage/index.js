@@ -26,8 +26,7 @@ const ProductIndexPage = () => {
                     <p>
                         #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
                     </p>
-                </div>
-                
+                </div> 
             </div>
                 <h1 id='product-header'>ALL PRODUCTS</h1>
             <div id='product-listings'>
