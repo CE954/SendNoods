@@ -19,9 +19,15 @@ const ProductIndexPage = () => {
     return (
         <> 
             <div id='product-anim'>
-                <div id='product-anim-text'>
-                #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
+                <div id='product-slider'>
+                    <p>
+                        #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
+                    </p>
+                    <p>
+                        #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
+                    </p>
                 </div>
+                
             </div>
                 <h1 id='product-header'>ALL PRODUCTS</h1>
             <div id='product-listings'>
