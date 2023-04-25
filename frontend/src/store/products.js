@@ -13,7 +13,6 @@ export const setProduct = payload => ({
     payload
 });
 
-// selectors
 export const getProducts = state => {
     return state.products ? Object.values(state.products) : [];
 }
@@ -22,7 +21,6 @@ export const getProduct = productId => state => {
     return state.products ? state.products[productId] : null;
 }
 
-// thunks
 export const fetchProducts = () => async dispatch => {
     const res = await csrfFetch('/api/products');
     const products = await res.json();
@@ -35,13 +33,12 @@ export const fetchProduct = productId => async dispatch => {
     dispatch(setProduct(product));
 }
 
-// reducer
 const productsReducer = (state = {}, action) => {
     let newState;
 
     switch (action.type) {
         case SET_PRODUCTS:
-            return action.payload.products
+            return action.payload.products;
         case SET_PRODUCT:
             newState = { ...state };
             newState[action.payload.id] = action.payload;
