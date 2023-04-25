@@ -13,14 +13,19 @@ const NavBar = () => {
     const location = useLocation();
 
     const navColor = () => {
-        if (location.pathname === '/') {
-            return 'orange';
-        } else if (location.pathname === '/login') {
-            return 'white';
-        } else if (location.pathname === '/signup') {
-            return 'white';
-        } else if (location.pathname === '/account') {
-            return 'white';
+        switch (location.pathname) {
+            case '/':
+                return 'orange';
+            case '/login':
+                return 'white';
+            case '/signup':
+                return 'white';
+            case '/account':
+                return 'white';
+            case '/products':
+                return 'white';
+            default: 
+                return 'white';
         }
     }
 

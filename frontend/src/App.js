@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import SignupFormPage from './components/SignupFormPage';
 import AccountPage from './components/AccountPage';
 import Footer from './components/Footer';
+import ProductIndexPage from './components/ProductIndexPage';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path='/account'>
             <AccountPage />
+          </Route>
+          <Route exact path='/products'>
+            <ProductIndexPage />
           </Route>
         </Switch>
       <Footer/>
