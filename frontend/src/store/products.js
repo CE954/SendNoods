@@ -40,8 +40,7 @@ const productsReducer = (state = {}, action) => {
         case SET_PRODUCTS:
             return action.payload.products;
         case SET_PRODUCT:
-            newState = { ...state };
-            newState[action.payload.id] = action.payload;
+            newState = { ...state, ...action.payload.product };
             return newState;
         default:
             return state;
