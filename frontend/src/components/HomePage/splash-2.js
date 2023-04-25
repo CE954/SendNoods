@@ -23,7 +23,9 @@ const Splash2 = () => {
             <div className='press-wrapper'>
                 <div className='press-swiper'>
                     <div className='press-images'>
-                        {pressMap()}    
+                        {pressMap()}  
+                        {pressMap()} 
+                        {pressMap()} 
                     </div>
                 </div>
             </div>

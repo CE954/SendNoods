@@ -83,7 +83,7 @@
         padding: 0 2vw;
         height: 5vh;
         width: 100vw;
-        animation: pressSlide 13s ease-in-out infinite;
+        animation: pressSlide 20s linear infinite;
 
         img {
             height: 5vh;
@@ -95,33 +95,12 @@
 
 @keyframes pressSlide {
     0% {
-        transform: translate(100%);
-        }
-
-    20% {
-        transform: translate(50%);
-        transition-delay: 2s;
-    }
-
-    40% {
         transform: translate(0%);
-        transition-delay: 2s;
-    }
-
-    60% {
-        transform: translate(-50%);
-        transition-delay: 2s;
-    }
-
-    80% {
-        transform: translate(-100%);
-        transition-delay: 2s;
-    }
-
+        }
+    
     100% {
-        transform: translate(-250%);
-        transition-delay: 2s;
-    }
+        transform: translate(-206%);
+        }
 }
 
 
