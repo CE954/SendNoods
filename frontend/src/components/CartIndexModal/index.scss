@@ -1,0 +1,50 @@
+#cart-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100vh;
+    z-index: 1;
+    translate: 100% 0;
+    transition: translate 0.4s ease-in-out;
+
+    #cart-menu-items {
+        font-size: 2em;
+        display: flex;
+        width: 90%;
+        justify-content: center;
+        text-align: center;
+        font-family: 'T-Star Regular';
+        margin: 2em 0;
+    }
+}
+
+#close-cart {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    font-size: 3em;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+#cart-menu-header {
+        width: 100%;
+        text-align: center;
+        font-size: 4em;
+        font-family: 'T-Star Bold';
+        margin-top: 0.25em;
+        // border-bottom: 1px solid #e0e0e0;
+}
+
+.open {
+    translate: 0%;
+}

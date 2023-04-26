@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import { FaShoppingCart } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
 import { GrFormClose } from 'react-icons/gr';
+import CartMenu from '../CartIndexModal';
 
 const NavBar = () => {
     const sessionUser = useSelector(state => state.session.user);
@@ -32,6 +33,11 @@ const NavBar = () => {
     const toggleSideMenu = () => {
         const sideNav = document.querySelector('.side-nav');
         sideNav.classList.toggle('active');
+    }
+
+    const openCart = () => {
+        const cartMenu = document.querySelector('#cart-menu');
+        cartMenu.style.translate = '0%';
     }
 
     return (
@@ -69,10 +75,11 @@ const NavBar = () => {
                     <NavLink to='/account'><FaUser/></NavLink> :
                     <NavLink to='/login'><FaUser/></NavLink>
                 }
-                <div id='cart'> 
-                    <FaShoppingCart/>
+                <div id='cart' > 
+                    <FaShoppingCart onClick={openCart}/>
                 </div>
             </div>
+            <CartMenu/>
         </div>
     )
 }
