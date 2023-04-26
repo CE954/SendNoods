@@ -9,6 +9,11 @@ import { GoThreeBars } from 'react-icons/go';
 import { GrFormClose } from 'react-icons/gr';
 import CartMenu from '../CartIndexModal';
 
+export const openCart = () => {
+    const cartMenu = document.querySelector('#cart-menu');
+    cartMenu.style.translate = '0%';
+}
+
 const NavBar = () => {
     const sessionUser = useSelector(state => state.session.user);
     const location = useLocation();
@@ -38,11 +43,6 @@ const NavBar = () => {
     const closeSideMenu = () => {
         const sideNav = document.querySelector('.side-nav');
         sideNav.style.translate = '-100%';
-    }
-
-    const openCart = () => {
-        const cartMenu = document.querySelector('#cart-menu');
-        cartMenu.style.translate = '0%';
     }
 
     return (

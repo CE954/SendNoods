@@ -9,7 +9,7 @@ class Api::CartItemsController < ApplicationController
     def create 
         @cart_item = CartItem.new(cart_item_params)
         if @cart_item.save
-            render :show
+            render 'api/cart_items/show'
         else
             render json: {errors: ['Could not add to cart.'] }, status: 422
         end
@@ -18,7 +18,7 @@ class Api::CartItemsController < ApplicationController
     def update 
         @cart_item = CartItem.find(params[:id])
         if @cart_item.update(cart_item_params)
-            render :show
+            render 'api/cart_items/show'
         else  
             render json: {errors: ['Could not update cart.'] }, status: 422
         end
@@ -35,6 +35,6 @@ class Api::CartItemsController < ApplicationController
 
     private 
     def cart_item_params 
-        params.require(:cart_items).permit(:user_id, :product_id, :quantity, :id)
+        params.require(:cart_item).permit(:user_id, :product_id, :quantity, :id)
     end
 end

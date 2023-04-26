@@ -16,11 +16,12 @@
     #cart-menu-items {
         font-size: 2em;
         display: flex;
-        width: 90%;
+        flex-direction: column;
+        width: 75%;
         justify-content: center;
         text-align: center;
         font-family: 'T-Star Regular';
-        margin: 2em 0;
+        margin: 0.5em 0;
     }
 }
 
@@ -42,11 +43,50 @@
         font-size: 4em;
         font-family: 'T-Star Bold';
         margin-top: 0.25em;
-        // border-bottom: 1px solid #e0e0e0;
+        color: var(--off-black);
 }
 
 .open {
     translate: 0%;
+}
+
+#cart-login {
+    font-family: T-Star Bold;
+    background-color: #ffffff;
+    border: 2px solid var(--off-black);
+    transition: 0.5s;
+    text-align: center;
+    letter-spacing: 0.03em;
+    border-radius: 5vw;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: 1em;
+    padding: 1.5vh 5vw;
+}
+
+#cart-login:hover {
+    cursor: pointer;
+    background-color: var(--off-black);
+    color: #ffffff;
+}
+
+#cart-noodles {
+    position: absolute;
+    top: 20%;
+    height: 25vh;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @media all and (max-width: 900px) {
@@ -55,7 +95,7 @@
     }
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 650px) {
     #cart-menu {
         width: 100%;
     }

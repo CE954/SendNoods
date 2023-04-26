@@ -7,7 +7,7 @@ import { fetchProduct, getProduct } from '../../store/products';
 import { useHistory } from 'react-router-dom';
 
 
-const CartIndexItem = ({ cartItem, setSubTotal }) => {
+const CartIndexItem = ({ cartItem, setSubTotal}) => {
     const dispatch = useDispatch();
     const { id, productId, quantity } = cartItem;
     const product = useSelector(getProduct(cartItem.productId));
@@ -15,7 +15,6 @@ const CartIndexItem = ({ cartItem, setSubTotal }) => {
     const user = useSelector(state => state.session.user);
     const [removed, setRemoved] = useState(false);
     const history = useHistory();
-
     
     useEffect(() => {
         if (user) {
@@ -29,41 +28,57 @@ const CartIndexItem = ({ cartItem, setSubTotal }) => {
 
     const { name, price, photoUrl } = product;
 
-    const updateItem = (e) => {
-        const userId = user.id;
-        const newCartItem = {
-            id,
-            productId,
-            quantity: amount,
-            userId 
-        }
-        dispatch(updateCartItem(newCartItem));
-    }
-
     const deleteItem = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         dispatch(deleteCartItem(id, productId));
         setRemoved(true);
     }
     
-    setSubTotal((price * amount));
+    const handleIncrease = () => {
+        const userId = user.id;
+        const updatedCartItem = {
+            cartItem: {
+                id,
+                userId,
+                productId,
+                quantity: parseInt(quantity + 1),
+            }
+        }
+        return dispatch(updateCartItem(updatedCartItem));
+    }
+
+    const handleDecrease = () => {
+        if (parseInt(quantity - 1) === 0) return deleteItem();
+        const userId = user.id;
+        const updatedCartItem = {
+            cartItem: {
+                id,
+                userId,
+                productId,
+                quantity: parseInt(quantity - 1),
+            }
+        }
+        return dispatch(updateCartItem(updatedCartItem));
+    }
+
 
     return (
         <>
             <div className='cart-item'>
                 <img id='cart-item-photo' src={photoUrl} alt='product'/>
                 <div className='cart-item-info'>
-                    <GrFormClose id='remove-cart-item' onClick={deleteItem}/>
-                    <div className='cart-item-name'>{name}</div>
-                    <div className='cart-item-price'>${(Math.round((price) * 100) / 100).toFixed(2)}</div>
+                    <div className='cart-item-header'>
+                        <GrFormClose id='remove-cart-item' onClick={deleteItem}/>
+                        <div className='cart-item-name'>{name}</div>
+                    </div>
                     <div className='cart-item-total'>
-                        <div className='item-quantity'>Amount: {quantity}</div>
-                        <div className='item-subtotal'>Subtotal: ${(Math.round((price * quantity) * 100) / 100).toFixed(2)}</div>
+                        <div className='item-quantity'>Quantity: {quantity}</div>
+                        <div className='item-subtotal'>${(Math.round((quantity * price) * 100) / 100).toFixed(2)}</div>
                     </div>
                     <div className='cart-item-quantity'>
-                        <button onClick={() => {parseInt(amount) < 1 ? setAmount(parseInt(amount) - 1) : deleteItem() ; updateItem()}}>-</button>
-                        <input type='number' value={amount} onChange={(e) => setAmount(e.target.value)} />
-                        <button onClick={()=> {setAmount(parseInt(amount) + 1); updateItem()}}>+</button>
+                        <button onClick={handleDecrease}>-</button>
+                        <input type='number' value={quantity} readOnly/>
+                        <button onClick={handleIncrease}>+</button>
                     </div>
                 </div>
             </div>

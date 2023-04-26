@@ -1,5 +1,5 @@
 
-export const csrfFetch = async (url, options = {}) => {
+async function csrfFetch(url, options = {}) {
     options.method = options.method || 'GET';
     options.headers = options.headers || {};
    
@@ -13,7 +13,5 @@ export const csrfFetch = async (url, options = {}) => {
     if (res.status >= 400) throw res;
     return res;
 }
-
-
 
 export default csrfFetch;

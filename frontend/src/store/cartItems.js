@@ -37,7 +37,8 @@ export const addCartItem = cartItem => async dispatch => {
     const res = await csrfFetch('/api/cart_items', {
         method: 'POST',
         headers: { 
-            'Content-Type': 'application/json' 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(cartItem)
     });
@@ -49,7 +50,8 @@ export const updateCartItem = data => async dispatch => {
     const res = await csrfFetch(`/api/cart_items/${data.cartItem.id}`, {
         method: 'PATCH',
         headers: { 
-            'Content-Type': 'application/json' 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(data)
     });
@@ -70,8 +72,7 @@ const cartItemsReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return action.payload.cartItems;
         case RECEIVE_CART_ITEM:
-            newState = { ...state };
-            newState[action.payload.id] = action.payload.cartItem;
+            newState = { ...state, ...action.payload.cartItem};
             return newState;
         case REMOVE_CART_ITEM:
             newState = { ...state };
