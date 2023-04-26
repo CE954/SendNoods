@@ -48,3 +48,15 @@
 .open {
     translate: 0%;
 }
+
+@media all and (max-width: 900px) {
+    #cart-menu {
+        width: 45%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    #cart-menu {
+        width: 100%;
+    }
+}

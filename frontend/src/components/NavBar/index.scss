@@ -74,7 +74,7 @@
     background-color: white;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 900px) {
     #nav-bar {
         justify-content: space-between;
 
@@ -108,9 +108,10 @@
                         align-items: center;
                         background-color: white;
                         position: fixed;
+                        text-align: center;
                         top: 0;
                         left: 0;
-                        width: 65%;
+                        width: 45%;
                         height: 100vh;
                         z-index: 1;
                         transition: 0.5s ease-in-out;
@@ -156,6 +157,16 @@
 
             #search {
                 display: none;  
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    #nav-bar {
+        .hamburger{
+            .side-nav {
+                width: 100%;
             }
         }
     }
