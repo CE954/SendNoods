@@ -30,11 +30,6 @@ const NavBar = () => {
         }
     }
 
-    // const toggleSideMenu = () => {
-    //     const sideNav = document.querySelector('.side-nav');
-    //     sideNav.classList.toggle('active');
-    // }
-
     const openSideMenu = () => {
         const sideNav = document.querySelector('.side-nav');
         sideNav.style.translate = '0%';

@@ -99,47 +99,42 @@
             }
 
             .side-nav {
-                    // display: none;
-            
-                    // &.active {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-                        align-items: center;
-                        background-color: white;
-                        position: fixed;
-                        text-align: center;
-                        top: 0;
-                        left: 0;
-                        width: 45%;
-                        height: 100vh;
-                        z-index: 1;
-                        transition: 0.5s ease-in-out;
-                        // animation: slideIn 0.5s ease-in-out;
-                        translate: -100%;
-            
-                        a {
-                            text-decoration: none;
-                            color: var(--off-black);
-                            font-size: 1.3em;
-                            font-family: T-Star Bold;
-                            margin: 0.5em 1em;
-                        }
-
-                        :nth-child(2) {
-                            margin-top: 2em;
-                        }
-
-                        :nth-last-child(-n+2) {
-                            font-size: 1em;
-                            font-family: T-Star Regular;
-                        }
-            
-                        a:hover {
-                            text-decoration: underline;
-                        }
-                    // }
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                background-color: white;
+                position: fixed;
+                text-align: center;
+                top: 0;
+                left: 0;
+                width: 45%;
+                height: 100vh;
+                z-index: 1;
+                transition: 0.5s ease-in-out;
+                translate: -100%;
+    
+                a {
+                    text-decoration: none;
+                    color: var(--off-black);
+                    font-size: 1.3em;
+                    font-family: T-Star Bold;
+                    margin: 0.5em 1em;
                 }
+
+                :nth-child(2) {
+                    margin-top: 2em;
+                }
+
+                :nth-last-child(-n+2) {
+                    font-size: 1em;
+                    font-family: T-Star Regular;
+                }
+    
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
         }
 
         #nav-bar-left {
