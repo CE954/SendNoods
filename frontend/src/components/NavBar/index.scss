@@ -74,7 +74,7 @@
     background-color: white;
 }
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 800px) {
     #nav-bar {
         justify-content: space-between;
 
@@ -99,9 +99,9 @@
             }
 
             .side-nav {
-                    display: none;
+                    // display: none;
             
-                    &.active {
+                    // &.active {
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
@@ -113,8 +113,9 @@
                         width: 65%;
                         height: 100vh;
                         z-index: 1;
-                        // transition: 0.5s ease-in-out;
-                        animation: slideIn 0.5s ease-in-out;
+                        transition: 0.5s ease-in-out;
+                        // animation: slideIn 0.5s ease-in-out;
+                        translate: -100%;
             
                         a {
                             text-decoration: none;
@@ -136,7 +137,7 @@
                         a:hover {
                             text-decoration: underline;
                         }
-                    }
+                    // }
                 }
         }
 

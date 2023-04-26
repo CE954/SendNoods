@@ -30,9 +30,19 @@ const NavBar = () => {
         }
     }
 
-    const toggleSideMenu = () => {
+    // const toggleSideMenu = () => {
+    //     const sideNav = document.querySelector('.side-nav');
+    //     sideNav.classList.toggle('active');
+    // }
+
+    const openSideMenu = () => {
         const sideNav = document.querySelector('.side-nav');
-        sideNav.classList.toggle('active');
+        sideNav.style.translate = '0%';
+    }
+
+    const closeSideMenu = () => {
+        const sideNav = document.querySelector('.side-nav');
+        sideNav.style.translate = '-100%';
     }
 
     const openCart = () => {
@@ -43,14 +53,14 @@ const NavBar = () => {
     return (
         <div id='nav-bar' className={navColor()}>
             <div className='hamburger'> 
-                <GoThreeBars id='burger-icon' onClick={toggleSideMenu}/>
+                <GoThreeBars id='burger-icon' onClick={openSideMenu}/>
                 <div className='side-nav'>
-                    <GrFormClose id='close-icon' onClick={toggleSideMenu}/>
-                    <NavLink to='/products' onClick={toggleSideMenu}>SHOP NOW</NavLink>
-                    <NavLink to='/about' onClick={toggleSideMenu}>OUR STORY</NavLink>
+                    <GrFormClose id='close-icon' onClick={closeSideMenu}/>
+                    <NavLink to='/products' onClick={closeSideMenu}>SHOP NOW</NavLink>
+                    <NavLink to='/about' onClick={closeSideMenu}>OUR STORY</NavLink>
                     {sessionUser ?
-                        <NavLink to='/account' onClick={toggleSideMenu}>ACCOUNT</NavLink> :
-                        <NavLink to='/login' onClick={toggleSideMenu}>ACCOUNT</NavLink>
+                        <NavLink to='/account' onClick={closeSideMenu}>ACCOUNT</NavLink> :
+                        <NavLink to='/login' onClick={closeSideMenu}>ACCOUNT</NavLink>
                     }
                     <a href="https://www.linkedin.com/in/christian-espinosa-bb0b47187" target="_blank">
                         LINKEDIN
