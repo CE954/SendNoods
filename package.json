@@ -1,0 +1,25 @@
+{
+  "name": "send_noods",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CE954/SendNoods.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CE954/SendNoods/issues"
+  },
+  "homepage": "https://github.com/CE954/SendNoods",
+  "engines": {
+    "node": "16.19"
+  }
+}
