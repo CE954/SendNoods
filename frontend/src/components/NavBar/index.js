@@ -12,6 +12,8 @@ import CartMenu from '../CartIndexModal';
 export const openCart = () => {
     const cartMenu = document.querySelector('#cart-menu');
     cartMenu.style.translate = '0%';
+    const cartBackground = document.getElementById('cart-background');
+    cartBackground.style.display = 'block';
 }
 
 const NavBar = () => {
@@ -38,15 +40,20 @@ const NavBar = () => {
     const openSideMenu = () => {
         const sideNav = document.querySelector('.side-nav');
         sideNav.style.translate = '0%';
+        const sideNavBackground = document.getElementById('side-nav-background');
+        sideNavBackground.style.display = 'block';
     }
 
     const closeSideMenu = () => {
         const sideNav = document.querySelector('.side-nav');
         sideNav.style.translate = '-100%';
+        const sideNavBackground = document.getElementById('side-nav-background');
+        sideNavBackground.style.display = 'none';
     }
 
     return (
         <div id='nav-bar' className={navColor()}>
+            <div id='side-nav-background'/>
             <div className='hamburger'> 
                 <GoThreeBars id='burger-icon' onClick={openSideMenu}/>
                 <div className='side-nav'>

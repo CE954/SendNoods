@@ -21,7 +21,7 @@ const CartIndexItem = ({ cartItem, setSubTotal}) => {
             dispatch(fetchCartItems());
             dispatch(fetchProduct(productId));
         }
-    }, [removed]);
+    }, [removed, user]);
     
     if (!user) return history.push('/login');
     if (!product) return null;

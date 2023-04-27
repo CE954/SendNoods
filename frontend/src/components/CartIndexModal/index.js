@@ -18,6 +18,8 @@ const CartMenu = () => {
     const closeCart = () => {
         const cartMenu = document.getElementById('cart-menu');
         cartMenu.style.translate = '100%';
+        const cartBackground = document.getElementById('cart-background');
+        cartBackground.style.display = 'none';
     }
 
     const cartSubTotal = () => {
@@ -50,7 +52,29 @@ const CartMenu = () => {
         history.push('/login');
     }
 
+    const handleCheckOut = () => {
+        closeCart();
+        cartItems.forEach(cartItem => {
+            dispatch(deleteCartItem(cartItem.id, cartItem.productId));
+        })
+        const modal = document.getElementById('checkout-modal');
+        const modalBackground = document.getElementById('modal-background');
+        modal.style.display = 'block';
+        modalBackground.style.display = 'block';
+        history.push('/');
+    }
+
+    const handleModalClose = () => {
+        const modal = document.getElementById('checkout-modal');
+        const modalBackground = document.getElementById('modal-background');
+        modal.style.display = 'none';
+        modalBackground.style.display = 'none';
+    }
+
+
+
     return (
+        <>
         <div id='cart-menu'>
             <div id='cart-menu-header'>CART</div>
             <GrFormClose id='close-cart' onClick={closeCart}/> 
@@ -68,11 +92,19 @@ const CartMenu = () => {
             <div id='cart-menu-subtotal'>SUBTOTAL:
                 <div id='subtotal-num'>${(Math.round((cartSubTotal()) * 100) / 100).toFixed(2)}</div>
             </div>
-            <button id='cart-menu-checkout'>CHECKOUT</button>
+            <button id='cart-menu-checkout' onClick={handleCheckOut}>CHECKOUT</button>
             </>
             : null
             }
         </div>
+        <div id='checkout-modal'>
+            <GrFormClose onClick={handleModalClose} id='close-modal'/>
+            <h1 id='modal-header'>PEACE, LOVE, AND NOODLES</h1>
+            <p>Thank you for your purchase! We hope our noods put a big smile on your face</p>
+        </div>
+        <div id='cart-background'/>
+        <div id='modal-background'/>
+        </>
     )
 }
 

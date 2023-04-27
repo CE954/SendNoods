@@ -109,6 +109,56 @@
     }
 }
 
+#checkout-modal {
+    position: absolute;
+    width: 30vw;
+    height: 20vh;
+    top: 36vh;
+    background: #ffb8b0;
+    left: 31vw;
+    font-size: 1.5em;
+    font-family: 'T-Star Bold';
+    padding: 1.5em;
+    transition: 0.4s;
+    display: none;
+
+    p {
+        font-family: T-Star Regular;
+    }
+}
+
+#modal-header {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+#close-modal {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    font-size: 2em;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+#cart-background,
+#modal-background,
+#side-nav-background {
+    position: fixed;
+    width: 100vw;
+    background-color: #000000;
+    height: 100vh;
+    z-index: -2;
+    opacity: 0.4;
+    transition: 0.4s ease-in-out;
+    display: none;
+}
+
+
+
 @keyframes float {
     0% {
         transform: translateY(0px);
