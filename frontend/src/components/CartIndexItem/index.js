@@ -29,7 +29,6 @@ const CartIndexItem = ({ cartItem, setSubTotal}) => {
     const { name, price, photoUrl } = product;
 
     const deleteItem = (e) => {
-        // e.preventDefault();
         dispatch(deleteCartItem(id, productId));
         setRemoved(true);
     }

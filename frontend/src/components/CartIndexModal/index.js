@@ -71,8 +71,6 @@ const CartMenu = () => {
         modalBackground.style.display = 'none';
     }
 
-
-
     return (
         <>
         <div id='cart-menu'>
