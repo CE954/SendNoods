@@ -52,7 +52,7 @@ const CartMenu = () => {
                 </div> : 
                 <>
                 <img id='cart-noodles' src={noodles} alt='noodles'/>
-                <button id='cart-login' onClick={handleLogin}>LOGIN TO VIEW CART</button>
+                <button id='cart-login' onClick={handleLogin}>LOGIN TO SHOP</button>
                 </>
             }
         </div>

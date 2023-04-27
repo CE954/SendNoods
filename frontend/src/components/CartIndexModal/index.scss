@@ -62,13 +62,14 @@
     margin-top: auto;
     font-size: 1em;
     padding: 1.5vh 5vw;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--off-black);
+        color: #ffffff;
+    }
 }
 
-#cart-login:hover {
-    cursor: pointer;
-    background-color: var(--off-black);
-    color: #ffffff;
-}
 
 #cart-noodles {
     position: absolute;

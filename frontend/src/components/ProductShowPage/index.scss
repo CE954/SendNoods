@@ -11,6 +11,53 @@
     }
 }
 
+.product-show-quantity {
+    border: 2px solid #000;
+    border-radius: 5vh;
+    display: flex;
+    font-size: 1em;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin-top: 0.5vh;
+    overflow: hidden;
+    width: 9em;
+    height: 2em;
+
+    #product-show-quantity-input {
+        display: flex;
+        align-items: center;
+
+        button {
+                border: none;
+                padding-bottom: 0.25em;
+                background-color: transparent;
+                font-size: 2em;
+                font-family: "T-Star Regular";
+                transition: 0.3s;
+                text-align: center;
+        
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    background-color: var(--off-black);
+                    color: white;
+                }
+        
+                &:focus {
+                    transform: scale(1.2);
+                }
+            }
+
+        input {
+            text-align: center;
+            border: none;
+            width: 6.3em;
+            height: fit-content;
+            font-family: T-Star Bold;
+        }
+    }
+}
+
 #product-show-info {
     height: 35vh;
     width: 41vw;
@@ -33,6 +80,32 @@
     #product-show-price {
         font-size: 2em;
         font-family: 'T-Star Bold';
+        margin-bottom: 1em;
+    }
+}
+
+#product-show-quantity-label {
+    font-size: 0.9em;
+    font-family: T-Star Regular;
+}
+
+#add-to-cart {
+    font-family: T-Star Bold;
+    background-color: #ffffff;
+    border: 2px solid var(--off-black);
+    transition: 0.5s;
+    text-align: center;
+    letter-spacing: 0.03em;
+    border-radius: 5vw;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: 1em;
+    padding: 1.5vh 5vw;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--off-black);
+        color: #ffffff;
     }
 }
 
@@ -40,6 +113,11 @@
     .product-show-container {
             display: flex;
             flex-direction: column;
+    }
+
+    #product-show-quantity-label {
+        margin-top: 0.5em;
+        margin-bottom: 0;
     }
     
     #product-show-image {
@@ -51,11 +129,22 @@
         }
     }
 
+    
     #product-show-info {
-        height: 35vh;
+        height: 50vh;
         width: 80%;
         text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
 
+        #product-show-price{
+            margin-bottom: 0.5em;
+        }
+
+        div {
+            margin: 0.5em 0;
+        }
     }
 }
 
@@ -69,5 +158,19 @@
     
     .product-show-container {
         font-size: 0.8em;
+    }
+
+    #add-to-cart {
+        margin-top: 1em;
+    }
+
+    .product-show-quantity {
+
+            #product-show-quantity-input {
+
+                input {
+                    width: 4.8em;
+                }
+            }
     }
 }

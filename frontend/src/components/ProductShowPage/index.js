@@ -81,16 +81,16 @@ const ProductShowPage = () => {
                     <div id='product-show-name'>{ name }</div>
                     <div id='product-show-desc'>{ description }</div>
                     <div id='product-show-price'>${ (Math.round(price * 100) / 100).toFixed(2) }</div>
-                </div>
-                <div className='product-show-quantity'>
                     <div id='product-show-quantity-label'>Select Quantity</div>
-                    <div id='product-show-quantity-input'>
-                        <button onClick={() => parseInt(quantity) > 1 ? setQuantity(parseInt(quantity) - 1) : setQuantity(1)}>-</button>
-                        <input type='text' id='quant-input' value={quantity} onChange={updateQuantity} />
-                        <button onClick={() => setQuantity(parseInt(quantity) + 1)}>+</button>
+                    <div className='product-show-quantity'>
+                        <div id='product-show-quantity-input'>
+                            <button onClick={() => parseInt(quantity) > 1 ? setQuantity(parseInt(quantity) - 1) : setQuantity(1)}>-</button>
+                            <input type='text' id='quant-input' value={quantity} onChange={updateQuantity} />
+                            <button onClick={() => setQuantity(parseInt(quantity) + 1)}>+</button>
+                        </div>
                     </div>
+                    <button id='add-to-cart' onClick={addToCart}>ADD TO CART</button>
                 </div>
-                <button id='add-to-cart' onClick={addToCart}>ADD TO CART</button>
             </div>
         </>
     )
