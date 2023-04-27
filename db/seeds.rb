@@ -12,6 +12,7 @@ require 'open-uri'
   puts "resetting primary keys..."
   ApplicationRecord.connection.reset_pk_sequence!('users')
   ApplicationRecord.connection.reset_pk_sequence!('products')
+  ApplicationRecord.connection.reset_pk_sequence!('cart_items')
 
   puts "creating demo user..."
   User.create!(

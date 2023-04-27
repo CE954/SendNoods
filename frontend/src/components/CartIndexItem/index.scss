@@ -49,7 +49,7 @@
 }
 
 .cart-item-quantity {
-        border: 1px solid #000;
+        border: 2px solid #000;
         border-radius: 5vh;
         display: flex;
         font-size: 1em;
@@ -57,7 +57,6 @@
         align-items: center;
         margin-top: 0.5vh;
         overflow: hidden;
-        // width: 6vw;
 
         button {
             border: none;

@@ -20,6 +20,14 @@ const CartMenu = () => {
         cartMenu.style.translate = '100%';
     }
 
+    const cartSubTotal = () => {
+        let total = 0;
+        cartItems.forEach(cartItem => {
+            total += cartItem.quantity * cartItem.price;
+        })
+        return total;
+    }
+
     useEffect(() => {
         if (user) {
             dispatch(fetchCartItems());
@@ -54,6 +62,15 @@ const CartMenu = () => {
                 <img id='cart-noodles' src={noodles} alt='noodles'/>
                 <button id='cart-login' onClick={handleLogin}>LOGIN TO SHOP</button>
                 </>
+            }
+            { user && cartItems.length > 0 ? 
+            <>
+            <div id='cart-menu-subtotal'>SUBTOTAL:
+                <div id='subtotal-num'>${(Math.round((cartSubTotal()) * 100) / 100).toFixed(2)}</div>
+            </div>
+            <button id='cart-menu-checkout'>CHECKOUT</button>
+            </>
+            : null
             }
         </div>
     )

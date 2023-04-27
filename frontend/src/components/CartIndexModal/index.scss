@@ -12,6 +12,7 @@
     z-index: 1;
     translate: 100% 0;
     transition: translate 0.4s ease-in-out;
+    overflow: scroll;
 
     #cart-menu-items {
         font-size: 2em;
@@ -76,6 +77,36 @@
     top: 20%;
     height: 25vh;
     animation: float 2.5s ease-in-out infinite;
+}
+
+#cart-menu-subtotal {
+    font-family: T-Star Bold;
+    display: flex;
+    width: 68%;
+    font-size: 1.5em;
+    justify-content: space-between;
+    margin-bottom: 0.8em;
+}
+
+#cart-menu-checkout {
+    font-family: T-Star Bold;
+    background-color: #ffffff;
+    border: 2px solid var(--off-black);
+    transition: 0.5s;
+    text-align: center;
+    letter-spacing: 0.03em;
+    border-radius: 5vw;
+    font-size: 1em;
+    padding: 1.5vh 5vw;
+    margin-bottom: 2em;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #53d853;
+        color: var(--off-black);
+        border-color: #53d853;
+        transform: scale(1.1);
+    }
 }
 
 @keyframes float {
