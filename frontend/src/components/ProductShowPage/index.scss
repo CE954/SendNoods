@@ -69,17 +69,20 @@
     #product-show-name {
         font-size: 3em;
         font-family: "T-Star Bold";
+        color: var(--off-black);
         text-transform: uppercase;
     }
 
     #product-show-desc {
         font-size: 1.3em;
         font-family: 'T-Star Regular';
+        color: var(--off-black);
     }
 
     #product-show-price {
         font-size: 2em;
         font-family: 'T-Star Bold';
+        color: var(--off-black);
         margin-bottom: 1em;
     }
 }
@@ -91,6 +94,7 @@
 
 #add-to-cart {
     font-family: T-Star Bold;
+    color: var(--off-black);
     background-color: #ffffff;
     border: 2px solid var(--off-black);
     transition: 0.5s;
