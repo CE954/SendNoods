@@ -1,0 +1,55 @@
+.reviews-index {
+    height: 100vh;
+    width: 100vw;
+    background: #BDDABD;
+}
+
+#reviews-header {
+    text-align: center;
+    padding-top: 1em;
+    font-family: "T-Star Bold";
+    font-size: 3em;
+}
+
+#reviews-items {
+    font-family: "T-Star Regular";
+    display: flex;
+    flex-direction: column;
+    margin: 0 5em;
+    max-width: 95%;
+    align-items: center;
+}
+
+#no-reviews {
+    text-align: center;
+    font-family: 'T-Star Regular'; 
+    font-size: 2em;
+}
+
+#add-review-container {
+    justify-content: center;
+    display: flex;
+    margin: 1em;
+    margin-bottom: 1.8em;
+}
+
+#add-review {
+    font-family: T-Star Bold;
+    color: rgb(245, 245, 245);
+    background-color: var(--off-black);
+    border: 2px solid var(--off-black);
+    transition: 0.5s;
+    text-align: center;
+    letter-spacing: 0.03em;
+    border-radius: 5vw;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: 1em;
+    padding: 1.5vh 5vw;
+
+    &:hover {
+            cursor: pointer;
+            background-color: #BDDABD;
+            color: var(--off-black);
+        }
+}

@@ -21,9 +21,21 @@ const ReviewsIndexSection = () => {
                 <ReviewsIndexItem key={review.id} review={review} />
             )
         )} else {
-            return <div className='no-reviews'>No reviews yet!</div>
+            return <div id='no-reviews'>No reviews yet!</div>
         }
     }
+
+    return (
+        <div className='reviews-index'> 
+            <div id='reviews-header'>REVIEWS</div>
+            <div id='add-review-container'> 
+                <button id='add-review'>WRITE A REVIEW</button> 
+            </div>
+            <div id='reviews-items'>
+                {reviewMap()}
+            </div>
+        </div>
+    )
 
 }
 

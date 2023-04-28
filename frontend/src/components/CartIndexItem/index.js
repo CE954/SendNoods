@@ -7,11 +7,11 @@ import { fetchProduct, getProduct } from '../../store/products';
 import { useHistory } from 'react-router-dom';
 
 
-const CartIndexItem = ({ cartItem, setSubTotal}) => {
+const CartIndexItem = ({ cartItem }) => {
     const dispatch = useDispatch();
     const { id, productId, quantity } = cartItem;
     const product = useSelector(getProduct(cartItem.productId));
-    const [amount, setAmount] = useState(quantity);
+    // const [amount, setAmount] = useState(quantity);
     const user = useSelector(state => state.session.user);
     const [removed, setRemoved] = useState(false);
     const history = useHistory();

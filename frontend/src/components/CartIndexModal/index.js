@@ -42,7 +42,7 @@ const CartMenu = () => {
             return 'YOUR CART IS EMPTY';
         } else {
             return cartItems.map(cartItem => (
-                <CartIndexItem key={cartItem.id} cartItem={cartItem} setSubTotal={setSubTotal}/>
+                <CartIndexItem key={cartItem.id} cartItem={cartItem}/>
             ))
         }
     }

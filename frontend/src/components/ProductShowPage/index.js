@@ -6,6 +6,7 @@ import { getProduct, fetchProduct } from '../../store/products';
 import { getCartItem, updateCartItem, addCartItem} from '../../store/cartItems';
 import { useHistory } from 'react-router-dom';
 import { openCart } from '../NavBar/index';
+import ReviewsIndexSection from '../ReviewsIndexSection';
 
 const ProductShowPage = () => {
     const dispatch = useDispatch();
@@ -92,6 +93,7 @@ const ProductShowPage = () => {
                     <button id='add-to-cart' onClick={addToCart}>ADD TO CART</button>
                 </div>
             </div>
+            <ReviewsIndexSection />
         </>
     )
 }

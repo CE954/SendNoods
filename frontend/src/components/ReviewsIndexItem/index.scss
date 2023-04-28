@@ -1,0 +1,40 @@
+.star {
+    color: #ffe394;
+}
+
+.star-empty {
+    color: #c4c2c2;
+}
+
+.review-item {
+    // margin-bottom: 5vh;
+    width: 100%;
+    font-size: 1.5em;
+    border-top: 1px solid;
+
+    &:last-child {
+        border-bottom: 1px solid;
+    }
+
+    div {
+        margin: 0.5em 0;
+    }
+
+    #review-user {
+        text-align: right;
+    }
+}
+
+.review-buttons {
+    text-align: right;
+
+    svg {
+        margin: 0 0.2em;
+
+        &:hover {
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
+}
+
