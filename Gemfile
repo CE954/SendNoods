@@ -36,6 +36,7 @@ gem "aws-sdk-s3"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
+gem "resque"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -50,4 +51,5 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+
 
