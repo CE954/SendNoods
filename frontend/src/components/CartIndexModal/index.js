@@ -33,7 +33,7 @@ const CartMenu = () => {
         if (user) {
             dispatch(fetchCartItems());
         }
-    }, [cartItems.length]);
+    }, [cartItems.length, user]);
 
     const cartItemMap = () => {
         if (cartItems.length === 0) {
