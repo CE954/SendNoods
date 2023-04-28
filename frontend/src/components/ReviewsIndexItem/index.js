@@ -3,12 +3,27 @@ import { BsStarFill } from 'react-icons/bs';
 import { FaEdit } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { AiFillDelete } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
+import { deleteReview } from '../../store/reviews';
+import { useState, useEffect } from 'react';
+import { fetchReviews } from '../../store/reviews';
 
 const ReviewsIndexItem = ({ review }) => {
     const { body, id, name, productId, rating, userId } = review;
     const user = useSelector(state => state.session.user);
-    
+    const [removed, setRemoved] = useState(false);
+    const dispatch = useDispatch();
+    // console.log(id);
 
+    useEffect(() => {
+        dispatch(fetchReviews(productId));
+    }, [removed])
+
+    const handleDeleteReview = (e) => {
+        setRemoved(true);
+        return dispatch(deleteReview(id));
+    }
+    
     return (
         <div className='review-item'>
             <div id='star-rating'>
@@ -22,7 +37,7 @@ const ReviewsIndexItem = ({ review }) => {
             <div id='review-user'>{name}</div>
             <div className='review-buttons'>
                 { user && user.id === userId ? <FaEdit className='edit-review' /> : null}
-                { user && user.id === userId ? <AiFillDelete className='delete-review' /> : null}
+                { user && user.id === userId ? <AiFillDelete className='delete-review' onClick={handleDeleteReview}/> : null}
             </div>
         </div>
     )

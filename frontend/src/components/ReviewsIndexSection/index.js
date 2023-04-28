@@ -15,6 +15,10 @@ const ReviewsIndexSection = () => {
         dispatch(fetchReviews(productId));
     }, [dispatch, productId])
 
+    useEffect(() => {
+        dispatch(fetchReviews(productId));
+    }, [reviews.length])
+
     const reviewMap = () => {
         if (reviews.length > 0) {
             return reviews.map(review => (

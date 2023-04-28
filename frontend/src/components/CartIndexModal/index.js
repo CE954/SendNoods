@@ -12,7 +12,6 @@ const CartMenu = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const cartItems = useSelector(getCartItems);
-    const [subTotal, setSubTotal] = useState(0);
     const user = useSelector(state => state.session.user);
 
     const closeCart = () => {
@@ -33,7 +32,6 @@ const CartMenu = () => {
     useEffect(() => {
         if (user) {
             dispatch(fetchCartItems());
-            // dispatch(fetchProducts)
         }
     }, [cartItems.length]);
 
