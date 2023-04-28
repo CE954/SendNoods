@@ -3,5 +3,3 @@ json.extract! product,
     :name, 
     :description, 
     :price 
-
-json.photo_url product.photo.url
