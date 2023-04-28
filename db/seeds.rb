@@ -8,6 +8,10 @@
 require 'open-uri'
 
 # ApplicationRecord.transaction do 
+  CartItem.delete_all
+  Review.delete_all
+  Product.delete_all 
+  User.delete_all
 
   puts "resetting primary keys..."
   ApplicationRecord.connection.reset_pk_sequence!('users')
