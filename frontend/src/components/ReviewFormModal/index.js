@@ -27,22 +27,34 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
         setBody(currentReview.body);
     }, [currentReview.body]);
 
-    const handleStarClick = (newRating) => {
-        setActiveRating(newRating);
-        setRating(newRating);
-    };
-    
     const starRating = () => {
+        const hoverRating = activeRating || rating;
+
+        const handleHover = (hoverRating) => {
+            setActiveRating(hoverRating);
+        };
+
+        const handleClick = (clickedRating) => {
+            setRating(clickedRating);
+            setActiveRating(clickedRating);
+        };
+
         return (
             <>
-                {[...Array(5)].map((_, index) => (
-                    <BsStarFill
-                    key={index}
-                    id='form-star'
-                    className={activeRating >= index + 1 ? "star" : "star-empty"}
-                    onClick={() => handleStarClick(index + 1)}
-                    />
-                    ))}
+                {[1, 2, 3, 4, 5].map((index) => {
+                    return (
+                        <BsStarFill
+                            key={index}
+                            id='form-star'
+                            className={
+                                hoverRating >= index ? "star" : "star-empty"
+                            }
+                            onMouseEnter={() => handleHover(index)}
+                            onMouseLeave={() => handleHover(null)}
+                            onClick={() => handleClick(index)}
+                        />
+                    );
+                })}
             </>
         );
     };
