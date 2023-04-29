@@ -4,7 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+# gem 'sassc-rails'
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
+
+# gem "sprockets-rails"
+gem 'sassc-rails'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -28,7 +32,7 @@ gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
+# gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
