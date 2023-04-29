@@ -8,16 +8,21 @@ import { deleteReview } from '../../store/reviews';
 import { useState, useEffect } from 'react';
 import { fetchReviews } from '../../store/reviews';
 
-const ReviewsIndexItem = ({ review }) => {
+const ReviewsIndexItem = ({ review, openEdit, setCurrentReview, currentReview }) => {
     const { body, id, name, productId, rating, userId } = review;
     const user = useSelector(state => state.session.user);
     const [removed, setRemoved] = useState(false);
     const dispatch = useDispatch();
-    // console.log(id);
 
     useEffect(() => {
         dispatch(fetchReviews(productId));
     }, [removed])
+
+    useEffect(() => {
+        if (user && user.id === userId) {
+            setCurrentReview(review);
+        }
+    }, [review, setCurrentReview, user, userId]);
 
     const handleDeleteReview = (e) => {
         setRemoved(true);
@@ -36,7 +41,7 @@ const ReviewsIndexItem = ({ review }) => {
             <div id='review-body'>{body}</div>
             <div id='review-user'>{name}</div>
             <div className='review-buttons'>
-                { user && user.id === userId ? <FaEdit className='edit-review' /> : null}
+                { user && user.id === userId ? <FaEdit className='edit-review' onClick={openEdit} /> : null}
                 { user && user.id === userId ? <AiFillDelete className='delete-review' onClick={handleDeleteReview}/> : null}
             </div>
         </div>

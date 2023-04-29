@@ -1,0 +1,93 @@
+#review-background  {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgb(0 0 0 / 40%);
+    display: none;
+}
+
+.review-form-modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background: white;
+    width: 80vh;
+    height: 70vh;
+    font-family: T-Star Bold;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    button {
+        font-family: T-Star Bold;
+            color: var(--off-black);
+            background-color: #ffffff;
+            border: 2px solid var(--off-black);
+            transition: 0.5s;
+            text-align: center;
+            letter-spacing: 0.03em;
+            border-radius: 5vw;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1em;
+            padding: 1.5vh 5vw;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--off-black);
+            color: #ffffff;
+        }
+    }
+
+    div {
+        margin: 0 2em;
+    }
+}
+
+#close-review-form {
+    position: absolute;
+    right: 0.2%;
+    font-size: 3em;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+#review-header {
+    text-align: center;
+    margin: 0.7em;
+    font-size: 2.5em;
+}
+
+
+#review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#review-form-body {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+    font-size: 1.8em;
+
+    textarea {
+        resize: none;
+        border: 1px solid;
+        margin: 0em;
+        margin-bottom: 1em;
+        font-family: T-Star Regular;
+        font-size: 0.8em;
+    }
+}
+
+#review-stars {
+    font-size: 1.8em;
+    margin: 0 1em;
+    padding-bottom: 1em;
+}
