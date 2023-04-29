@@ -91,3 +91,10 @@
     margin: 0 1em;
     padding-bottom: 1em;
 }
+
+#form-star {
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}

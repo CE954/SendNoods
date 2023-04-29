@@ -14,34 +14,44 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     const { productId } = useParams();
     const user = useSelector(state => state.session.user);
 
-    const [hover, setHover] = useState(0);
     const [body, setBody] = useState(currentReview.body);
-    const [rating, setRating] = useState(0);
- 
-    console.log(currentReview);
+    const [rating, setRating] = useState(currentReview.rating);
+    const [activeRating, setActiveRating] = useState(currentReview.rating);
 
+    useEffect(() => {
+        setRating(currentReview.rating);
+        setActiveRating(currentReview.rating);
+    }, [currentReview.rating]);
+    
     useEffect(() => {
         setBody(currentReview.body);
     }, [currentReview.body]);
 
+    const handleStarClick = (newRating) => {
+        setActiveRating(newRating);
+        setRating(newRating);
+    };
+    
+    const starRating = () => {
+        return (
+            <>
+                {[...Array(5)].map((_, index) => (
+                    <BsStarFill
+                    key={index}
+                    id='form-star'
+                    className={activeRating >= index + 1 ? "star" : "star-empty"}
+                    onClick={() => handleStarClick(index + 1)}
+                    />
+                    ))}
+            </>
+        );
+    };
+    
     const closeReviewModal = () => {
         const form = document.getElementById('review-background');
         form.style.display = 'none';
     }
-
-    const starRating = () => {
-
-        return (
-            <>
-                <BsStarFill />
-                <BsStarFill />
-                <BsStarFill />
-                <BsStarFill />
-                <BsStarFill /> 
-            </>
-        )
-    }
-
+    
     return (
         <div id='review-background'> 
             <div className='review-form-modal'>
