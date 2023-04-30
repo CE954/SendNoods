@@ -14,20 +14,26 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     const { productId } = useParams();
     const user = useSelector(state => state.session.user);
 
+    const [isNewReview, setIsNewReview] = useState(true);
     const [body, setBody] = useState(currentReview ? currentReview.body : '');
     const [rating, setRating] = useState(currentReview ? currentReview.rating : 0);
     const [activeRating, setActiveRating] = useState(currentReview ? currentReview.rating : 0);
 
     useEffect(() => {
-        if (currentReview) {
+        if (Object.keys(currentReview).length !== 0) {
             setRating(currentReview.rating);
             setActiveRating(currentReview.rating);
+            setIsNewReview(false);
+        } else {
+            setIsNewReview(true);
         }
     }, [currentReview]);
 
     useEffect(() => {
         if (currentReview) {
             setBody(currentReview.body);
+        } else {
+            setBody('');
         }
     }, [currentReview]);
 
@@ -66,29 +72,45 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     const closeReviewModal = () => {
         const form = document.getElementById('review-background');
         form.style.display = 'none';
+    };
+
+    const resetForm = () => {
+        setBody('');
+        setRating(0);
+        setActiveRating(0);
+        setIsNewReview(true);
+        setCurrentReview({});
     }
 
     const submitReview = (e) => {
         e.preventDefault();
 
-        if (!currentReview) {
-            return;
-        }
-
-        const updatedReview = {
-            review : {
-            ...currentReview,
-            body,
-            rating,
-            productId,
-            userId: user.id
+        const newReview = {
+            review: {
+                body,
+                rating,
+                productId,
+                userId: user.id
             }
         };
 
-        dispatch(updateReview(updatedReview));
+        if (isNewReview) {
+            dispatch(addReview(newReview));
+        } else {
+            const updatedReview = {
+                review: {
+                    ...currentReview,
+                    body,
+                    rating,
+                    productId,
+                    userId: user.id
+                }
+            };
+            dispatch(updateReview(updatedReview));
+        }
 
-        const form = document.getElementById('review-background');
-        form.style.display = 'none';
+        resetForm();
+        closeReviewModal();
     };
 
     

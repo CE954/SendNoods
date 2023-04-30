@@ -24,9 +24,16 @@ const ReviewsIndexItem = ({ review, openEdit, setCurrentReview, currentReview })
         }
     }, [review, setCurrentReview, user, userId]);
 
+    useEffect(() => {
+        if (removed) {
+            setCurrentReview({});
+        }
+    }, [removed, setCurrentReview]);
+
     const handleDeleteReview = (e) => {
         setRemoved(true);
-        return dispatch(deleteReview(id));
+        dispatch(deleteReview(id));
+        window.location.reload(); //refactor
     }
     
     return (
