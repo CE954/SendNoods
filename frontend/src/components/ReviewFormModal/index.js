@@ -14,18 +14,22 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     const { productId } = useParams();
     const user = useSelector(state => state.session.user);
 
-    const [body, setBody] = useState(currentReview.body);
-    const [rating, setRating] = useState(currentReview.rating);
-    const [activeRating, setActiveRating] = useState(currentReview.rating);
+    const [body, setBody] = useState(currentReview ? currentReview.body : '');
+    const [rating, setRating] = useState(currentReview ? currentReview.rating : 0);
+    const [activeRating, setActiveRating] = useState(currentReview ? currentReview.rating : 0);
 
     useEffect(() => {
-        setRating(currentReview.rating);
-        setActiveRating(currentReview.rating);
-    }, [currentReview.rating]);
-    
+        if (currentReview) {
+            setRating(currentReview.rating);
+            setActiveRating(currentReview.rating);
+        }
+    }, [currentReview]);
+
     useEffect(() => {
-        setBody(currentReview.body);
-    }, [currentReview.body]);
+        if (currentReview) {
+            setBody(currentReview.body);
+        }
+    }, [currentReview]);
 
     const starRating = () => {
         const hoverRating = activeRating || rating;
@@ -63,6 +67,30 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
         const form = document.getElementById('review-background');
         form.style.display = 'none';
     }
+
+    const submitReview = (e) => {
+        e.preventDefault();
+
+        if (!currentReview) {
+            return;
+        }
+
+        const updatedReview = {
+            review : {
+            ...currentReview,
+            body,
+            rating,
+            productId,
+            userId: user.id
+            }
+        };
+
+        dispatch(updateReview(updatedReview));
+
+        const form = document.getElementById('review-background');
+        form.style.display = 'none';
+    };
+
     
     return (
         <div id='review-background'> 
@@ -79,7 +107,7 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
                         </textarea>
                     </label>
                 </div>
-                <button id="submit-review" >SUBMIT</button>
+                <button id="submit-review" onClick={submitReview}>SUBMIT</button>
             </div>
         </div>
     )
