@@ -24,17 +24,23 @@ const ReviewsIndexItem = ({ review, openEdit, setCurrentReview, currentReview })
         }
     }, [review, setCurrentReview, user, userId]);
 
-    useEffect(() => {
-        if (removed) {
+    const handleDeleteReview = async () => {
+        try {
             setCurrentReview({});
-        }
-    }, [removed, setCurrentReview]);
+            
+            const response = dispatch(deleteReview(id));
 
-    const handleDeleteReview = (e) => {
-        setRemoved(true);
-        dispatch(deleteReview(id));
-        window.location.reload(); //refactor
-    }
+            if (response.ok) {
+                const updatedData = await response.json();
+                fetchReviews(updatedData);
+                setRemoved(true);
+            } else {
+                throw new Error("Failed to delete review.");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
     
     return (
         <div className='review-item'>

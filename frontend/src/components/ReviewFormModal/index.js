@@ -37,6 +37,8 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
         }
     }, [currentReview]);
 
+    console.log(currentReview)
+
     const starRating = () => {
         const hoverRating = activeRating || rating;
 
