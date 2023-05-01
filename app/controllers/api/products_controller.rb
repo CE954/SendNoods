@@ -10,6 +10,11 @@ class Api::ProductsController < ApplicationController
         @product = Product.find(params[:id])
     end
 
+    def search 
+        @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
+        render :index
+    end
+
     private 
     def product_params
         params.require(:product).permit(:name, :description, :price, :photo)

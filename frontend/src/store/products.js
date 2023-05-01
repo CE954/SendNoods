@@ -33,6 +33,14 @@ export const fetchProduct = productId => async dispatch => {
     dispatch(setProduct(product));
 }
 
+export const searchProducts = query => async dispatch => {
+    const res = await csrfFetch(`/api/products/search/${query}`);
+    if (res.ok) {
+        const products = await res.json();
+        dispatch(setProducts(products));
+    }
+}
+
 const productsReducer = (state = {}, action) => {
     let newState;
 

@@ -8,6 +8,7 @@ import AccountPage from './components/AccountPage';
 import Footer from './components/Footer';
 import ProductIndexPage from './components/ProductIndexPage';
 import ProductShowPage from './components/ProductShowPage';
+import SearchPage from './components/SearchPage';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path='/products/:productId'>
             <ProductShowPage />
+          </Route>
+          <Route exact path='/search'>
+            <SearchPage />
           </Route>
         </Switch>
       <Footer/>
