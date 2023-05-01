@@ -14,12 +14,13 @@
     flex-direction: column;
     position: fixed;
     background: white;
-    width: 80vh;
+    width: 60vw;
     height: 70vh;
     font-family: T-Star Bold;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    overflow: scroll;
 
     button {
         font-family: T-Star Bold;
@@ -83,6 +84,7 @@
         margin-bottom: 1em;
         font-family: T-Star Regular;
         font-size: 0.8em;
+        height: 30vh;
     }
 }
 
@@ -96,5 +98,57 @@
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
+    }
+}
+
+@media all and (max-width: 700px) {
+    .review-form-modal {
+        width: 70vw;
+        height: 70vh;
+    }
+   .review-form-modal {
+       width: 80vw;
+       height: 60vh;
+   }
+
+   #review-header {
+       font-size: 1.6em;
+   }
+
+   #review-stars {
+       font-size: 1.5em;
+   }
+
+   #review-form-body {
+       font-size: 1.5em;
+       textarea {
+           height: 25vh;
+       }
+   }
+}
+
+@media all and (max-width: 550px) {
+    .review-item {
+        font-size: 1em;
+    }
+
+    .review-form-modal {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    #review-header {
+        font-size: 1.5em;
+    }
+
+    #review-stars {
+        font-size: 1.3em;
+    }
+
+    #review-form-body {
+        font-size: 1.3em;
+        textarea {
+            height: 25vh;
+        }
     }
 }
