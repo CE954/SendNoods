@@ -56,15 +56,19 @@
 
             &:hover {
                 cursor: pointer;
-                transform: scale(1.1);
             }
         }
 
-        :nth-last-child(2):hover {
-            transform: scale(1.1);
-        }
     }
 }
+
+#cart-icon, #user-icon {
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
 
  #side-nav-background {
     display: none;

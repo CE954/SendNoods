@@ -8,6 +8,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
 import { GrFormClose } from 'react-icons/gr';
 import CartMenu from '../CartIndexModal';
+import SearchBar from '../SearchBar';
 
 export const openCart = () => {
     const cartMenu = document.querySelector('#cart-menu');
@@ -81,14 +82,15 @@ const NavBar = () => {
                 <NavLink to='/products'>SHOP NOW</NavLink>
                 <NavLink to='/about'>OUR STORY</NavLink>
                 <div id='search'>
-                    <FaSearch/>
+                    {/* <FaSearch/> */}
+                    <SearchBar/>
                 </div>
                 {sessionUser ? 
-                    <NavLink to='/account'><FaUser/></NavLink> :
-                    <NavLink to='/login'><FaUser/></NavLink>
+                    <NavLink to='/account' id='user-icon'><FaUser/></NavLink> :
+                    <NavLink to='/login' id='user-icon'><FaUser/></NavLink>
                 }
                 <div id='cart' > 
-                    <FaShoppingCart onClick={openCart}/>
+                    <FaShoppingCart onClick={openCart} id='cart-icon'/>
                 </div>
             </div>
             <CartMenu/>
