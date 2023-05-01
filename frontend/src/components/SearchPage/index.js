@@ -18,12 +18,24 @@ const SearchPage = () => {
     }
 
     return (
-        <div className='search-page'>
+        <>
+        <div id='product-anim'>
+            <div id='product-slider'>
+                <p>
+                    #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
+                </p>
+                <p>
+                    #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
+                </p>
+            </div>
+        </div>
             <h1 id='search-title'>SEARCH RESULTS</h1>
+        <div className='search-page'>
             <div className='search-items'>
                 {searchItems}
             </div>
         </div>
+        </>
     )
 }
 
