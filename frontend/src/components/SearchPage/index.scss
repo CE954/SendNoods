@@ -1,7 +1,13 @@
 .search-page {
     height: max-content;
     width: 100vw;
-    margin-bottom: 29vh;
+    margin-bottom: 45vh;
+}
+
+@media all and (max-width: 1000px) {
+    .search-page {
+        margin-bottom: 50vh;
+    }
 }
 
 #search-title {
@@ -22,6 +28,15 @@
     row-gap: 15vh;
     padding: 0 5%;
     margin: 8vh 0;
+}
+
+.no-results {
+    position: absolute;
+    font-size: 2em;
+    color: red;
+    font-family: 'T-STAR REGULAR';
+    left: 50%;
+    translate: -50%;
 }
 
 @media all and (max-width: 1090px) {
