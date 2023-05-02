@@ -134,7 +134,19 @@
     fill: none;
 }
 
-svg.text-path {
+#curve-2 {
+    fill: none;
+}
+
+svg.text-path-1 {
+    width: 100%;
+    font-family: T-Star Bold;
+    letter-spacing: .05em;
+    font-size: 1em;
+}
+
+svg.text-path-2 {
+    display: none;
     width: 100%;
     font-family: T-Star Bold;
     letter-spacing: .05em;
@@ -160,6 +172,19 @@ svg.text-path {
 }
 
 @media all and (max-width: 1090px) {
+    .moving-text {
+        margin-bottom: 1em;
+        height: 7em;
+    }
+
+    svg.text-path-1 {
+        display: none;
+    }
+
+    svg.text-path-2 {
+        display: block;
+    }
+
     .feature-grid {
         grid-template-columns: repeat(3, 1fr);
         margin-left: 2.8em;
@@ -187,7 +212,7 @@ svg.text-path {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 2em;
         margin-left: 1.5em;
-        padding-top: 0;
+        padding-top: 2em;
 
         .feature {
                 img {

@@ -36,11 +36,22 @@ const Splash2 = () => {
                 </div>
             </div>
             <div className='moving-text'>
-                <svg className="text-path" viewBox="0 -20 425 300">
+                <svg className="text-path-1" viewBox="0 -20 425 300">
                     <path id="curve" d="M0,0C76.72,0,76.72,49.11,153.43,49.11S230.15,0,306.87,0,383.58,49.11,460.3,49.11,537,0,613.74,0" />
                     <text x="-500">
                         <textPath xlinkHref="#curve">
                             <animate attributeName="startOffset" dur="13s" values="-500;0" repeatCount="indefinite"></animate>
+                            NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ 
+                        </textPath>
+                    </text>
+                </svg>
+                <svg className='text-path-2' viewBox="440 235 120 30">
+                    <path id="curve-2" d=" M 250, 500
+                            a 250,250 0 1,1 500,0
+                            a 250,250 0 1,1 -500,0" />
+                    <text x="-500">
+                        <textPath xlinkHref="#curve-2">
+                            <animate attributeName="startOffset" dur="15s" values="-500;0" repeatCount="indefinite"></animate>
                             NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ NOT A NORMAL NOODLE ~ 
                         </textPath>
                     </text>
