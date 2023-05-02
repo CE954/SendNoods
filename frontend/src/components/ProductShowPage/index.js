@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 import { openCart } from '../NavBar/index';
 import ReviewsIndexSection from '../ReviewsIndexSection';
 import check from '../../assets/check.png';
+import nutrition from '../../assets/nutrition.jpg';
 
 const ProductShowPage = () => {
     const dispatch = useDispatch();
@@ -128,6 +129,20 @@ const ProductShowPage = () => {
                     <li><img src={check}/> NO GMO</li>
                     <li><img src={check}/> NO ARTIFICIAL FLAVORS</li>
                 </ul>
+            </div>
+            <div id='nutrition-section'>
+                <div id='nutrition-text'> 
+                    <div id='nutrition-title'>SO, WHAT IS NUTRITIONALLY COMPLETE?</div>
+                    <div id='nutrition-p'>
+                        We've worked with expert nutritionists to make sure our noods have everything you need to thrive 
+                        - with the right balance of essential nutrients, protein, fibre, carbs, fats, 
+                        vitamins and minerals for a healthy lifestyle. The ultimate balanced meal in a pot, 
+                        so you can eat one for lunch and/or dinner alongside a healthy breakfast.
+                    </div>
+                </div>
+                <div id='nutrition-image'>
+                    <img src={nutrition} id='nutrition-pic'/>
+                </div>
             </div>
         </>
     )
