@@ -46,9 +46,11 @@ const ReviewsIndexSection = () => {
     return (
         <div className='reviews-index'> 
             <div id='reviews-header'>REVIEWS</div>
-            <div id='add-review-container'> 
-                <button id='add-review' onClick={openEdit}>WRITE A REVIEW</button> 
-            </div>
+            {currentReview.id ? null : 
+                <div id='add-review-container'> 
+                    <button id='add-review' onClick={openEdit}>WRITE A REVIEW</button> 
+                </div>
+            }
             <div id='reviews-items'>
                 {reviewMap()}
             </div>

@@ -7,13 +7,16 @@
 }
 
 .review-item {
-    // margin-bottom: 5vh;
     width: 100%;
     font-size: 1.5em;
     border-top: 1px solid;
 
     &:last-child {
         border-bottom: 1px solid;
+    }
+
+    &:first-child {
+        margin-top: 1em;
     }
 
     div {
