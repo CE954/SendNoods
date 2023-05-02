@@ -3,15 +3,17 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, getProducts } from '../../store/products';
 import ProductIndexItem from '../ProductIndexItem/index';
-// import Loader from "../Loader";
+import Loader from "../Loader";
+import { useState } from 'react';
 
 const ProductIndexPage = () => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
-        dispatch(fetchProducts());
+        dispatch(fetchProducts())
+        .then(() => setIsLoading(false));
     }, [dispatch]);
 
     const displayProducts = () => products.map((product) => (
@@ -20,6 +22,7 @@ const ProductIndexPage = () => {
 
     return (
         <> 
+            {isLoading && <Loader />}
             <div id='product-anim'>
                 <div id='product-slider'>
                     <p>
