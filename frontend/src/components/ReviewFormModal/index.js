@@ -18,6 +18,7 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     const [body, setBody] = useState(currentReview ? currentReview.body : '');
     const [rating, setRating] = useState(currentReview ? currentReview.rating : 0);
     const [activeRating, setActiveRating] = useState(currentReview ? currentReview.rating : 0);
+    const [errors , setErrors] = useState([]);
 
     useEffect(() => {
         if (Object.keys(currentReview).length !== 0) {
@@ -36,8 +37,6 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
             setBody('');
         }
     }, [currentReview]);
-
-    console.log(currentReview)
 
     const starRating = () => {
         const hoverRating = activeRating || rating;
@@ -79,13 +78,27 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     const resetForm = () => {
         setBody('');
         setRating(0);
+        setErrors([]);
         setActiveRating(0);
         setIsNewReview(true);
         setCurrentReview({});
     }
 
+    const validateForm = () => {
+        const formErrors = [];
+        if (!rating) {
+            formErrors.push('Rating cannot be blank');
+        }
+        if (!body) {
+            formErrors.push('Review cannot be blank');
+        }
+        setErrors(formErrors);
+        return formErrors;
+    };
+
     const submitReview = (e) => {
         e.preventDefault();
+        const formErrors = validateForm();
 
         const newReview = {
             review: {
@@ -95,6 +108,8 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
                 userId: user.id
             }
         };
+
+        if (formErrors.length > 0) return;
 
         if (isNewReview) {
             dispatch(addReview(newReview));
@@ -121,6 +136,9 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
             <div className='review-form-modal'>
                     <GrFormClose id='close-review-form' onClick={closeReviewModal}/>
                 <div id='review-header'>WRITE YOUR REVIEW</div>
+                <ul id='form-errors'>
+                    {errors.map((error, idx) => <li key={idx}>*{error}</li>)}
+                </ul>
                 <div id='review-form'>
                     <label id='review-stars'>RATING:
                         <br/>

@@ -36,7 +36,6 @@ if (
 ) {
   store.dispatch(sessionActions.restoreSession())
   .then(renderApplication);
-  console.log('session restored')
 } else {
   renderApplication();
 }

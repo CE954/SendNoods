@@ -15,7 +15,7 @@
     position: fixed;
     background: white;
     width: 60vw;
-    height: 70vh;
+    height: 75vh;
     font-family: T-Star Bold;
     left: 50%;
     top: 50%;
@@ -62,6 +62,7 @@
 #review-header {
     text-align: center;
     margin: 0.7em;
+    margin-bottom: 0.4em;
     font-size: 2.5em;
 }
 
@@ -69,6 +70,19 @@
 #review-form {
     display: flex;
     flex-direction: column;
+}
+
+#form-errors {
+    color: red;
+    font-size: 1.3em;
+    text-align: center;
+    font-family: T-Star Regular;
+    text-transform: uppercase;
+    margin-bottom: 0.3em;
+
+    li {
+        margin: 0.2em;
+    }
 }
 
 #review-form-body {
@@ -108,7 +122,7 @@
     }
    .review-form-modal {
        width: 80vw;
-       height: 60vh;
+       height: 63vh;
    }
 
    #review-header {
@@ -124,6 +138,10 @@
        textarea {
            height: 25vh;
        }
+   }
+
+   #form-errors {
+       font-size: 1.1em;
    }
 }
 
