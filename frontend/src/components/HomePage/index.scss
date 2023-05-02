@@ -310,8 +310,9 @@ svg.text-path-2 {
         margin-top: auto;
         font-size: 1em;
         padding: 1.5vh 5vw;
-        transition: opacity 1s ease-in-out;
+        transition: visibility 0s, opacity 1s ease-in-out;
         opacity: 0;
+        visibility: hidden;
     
         &:hover {
             cursor: pointer;
@@ -327,8 +328,9 @@ svg.text-path-2 {
         text-align: center;
         margin-top: 0.3em;
         margin-bottom: 0.3em;
-        transition: opacity 1s ease-in-out;
+        transition: visibility 0s, opacity 1s ease-in-out;
         opacity: 0;
+        visibility: hidden;
     }
 }
 
@@ -336,10 +338,12 @@ svg.text-path-2 {
     .nood {
         button {
             opacity: 1;
+            visibility: visible;
         }
 
         .nood-header {
             opacity: 1;
+            visibility: visible;
         }
     }
 }
