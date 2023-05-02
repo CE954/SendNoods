@@ -3,11 +3,13 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, getProducts } from '../../store/products';
 import ProductIndexItem from '../ProductIndexItem/index';
+// import Loader from "../Loader";
 
 const ProductIndexPage = () => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
-
+    // const [isLoading, setIsLoading] = useState(true);
+    
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);

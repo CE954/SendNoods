@@ -28,6 +28,7 @@ const ReviewsIndexItem = ({ review, openEdit, setCurrentReview, currentReview })
         try {
             setCurrentReview({});
             
+            console.log(id)
             const response = dispatch(deleteReview(id));
 
             if (response.ok) {

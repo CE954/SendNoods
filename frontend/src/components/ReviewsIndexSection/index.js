@@ -17,8 +17,15 @@ const ReviewsIndexSection = () => {
 
     
     useEffect(() => {
-        dispatch(fetchReviews(productId));
-    }, [dispatch, productId])
+        const abortController = new AbortController();
+        const signal = abortController.signal;
+
+        dispatch(fetchReviews(productId, signal));
+
+        return function cleanup() {
+            abortController.abort();
+        };
+    }, [dispatch, productId]);
 
     useEffect(() => {
         dispatch(fetchReviews(productId));

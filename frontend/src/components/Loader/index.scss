@@ -1,0 +1,38 @@
+.loading-screen {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgb(0 0 0 / 40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        scale: 0.3;
+        animation: spin 1.5s ease-in-out infinite;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        margin-top: 1rem;
+        font-family: T-Star Regular;
+        position: absolute;
+        top: 60%;
+        letter-spacing: 0.1em;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
