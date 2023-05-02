@@ -21,16 +21,24 @@
         align-items: center;
 
         button {
-            font-size: 2em;
             font-family: T-Star Bold;
-            border: none;
-            background: none;
             color: var(--off-black);
-        }
-
-        button:hover {
-            text-decoration: underline;
-            cursor: pointer;
+            background-color: #ffffff;
+            border: 2px solid var(--off-black);
+            transition: 0.5s;
+            text-align: center;
+            letter-spacing: 0.03em;
+            border-radius: 5vw;
+            margin-bottom: auto;
+            margin-top: auto;
+            font-size: 1em;
+            padding: 1.5vh 5vw;
+        
+            &:hover {
+                cursor: pointer;
+                background-color: var(--off-black);
+                color: #ffffff;
+            }
         }
     }
 
@@ -42,6 +50,13 @@
     }
 }
 
+#account-noodles {
+    display: none;
+    position: absolute;
+    top: 30%;
+    scale: 0.5;
+}
+
 @media all and (max-width: 768px) {
     .account-container {
         h1 {
@@ -50,6 +65,10 @@
 
         #account-cartoon {
             display: none
+        }
+
+        #account-noodles {
+            display: block;
         }
     }
 }
