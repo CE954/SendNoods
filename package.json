@@ -21,5 +21,8 @@
   "homepage": "https://github.com/CE954/SendNoods",
   "engines": {
     "node": "16.19"
+  },
+  "dependencies": {
+    "swiper": "^9.2.4"
   }
 }

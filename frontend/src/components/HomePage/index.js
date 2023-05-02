@@ -2,6 +2,7 @@ import './index.scss';
 import { NavLink } from 'react-router-dom';
 import splashImg from '../../assets/splash-img.png';
 import Splash2 from './splash-2';
+import Splash3 from './splash-3';
 import { useEffect } from 'react';
 
 const HomePage = () => {
@@ -30,6 +31,9 @@ const HomePage = () => {
             </div>
             <div className = 'splash-2'>
                 <Splash2 />
+            </div>
+            <div className = 'splash-3'>
+                <Splash3 />
             </div>
         </>
     )

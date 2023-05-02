@@ -64,6 +64,12 @@
     overflow: hidden;
 }
 
+.splash-3 {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(255, 227, 148);
+}
+
 .press-wrapper {
     padding: 2vh 0; 
     height: 15vh;
@@ -258,4 +264,96 @@ svg.text-path-2 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.nood-swiper {
+    display: block;
+    background-color: rgb(255, 227, 148);
+    width: 100vw;
+    height: 100vh;
+}
+
+.nood-image {
+    height: 30em;
+    margin-top: 2em;
+
+    img {
+       &:hover {
+        cursor: pointer;
+        }
+        scale:0.8;
+    }
+}
+
+.soup-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nood {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        font-family: T-Star Bold;
+        color: var(--off-black);
+        background: transparent;
+        border: 2px solid var(--off-black);
+        transition: 0.5s;
+        text-align: center;
+        letter-spacing: 0.03em;
+        border-radius: 5vw;
+        margin-bottom: auto;
+        margin-top: auto;
+        font-size: 1em;
+        padding: 1.5vh 5vw;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+    
+        &:hover {
+            cursor: pointer;
+            background-color: var(--off-black);
+            color: #ffffff;
+        }
+    }
+
+    .nood-header {
+        font-family: T-Star Bold;
+        font-size: 4em;
+        max-width: 8em;
+        text-align: center;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+    }
+}
+
+.swiper-slide-active {
+    .nood {
+        button {
+            opacity: 1;
+        }
+
+        .nood-header {
+            opacity: 1;
+        }
+    }
+}
+    
+@media all and (max-width: 950px) {
+    .nood {
+        .nood-header {
+            font-size: 2.5em;
+        }
+    }
+    .nood-image {
+        height: 25em;
+        img {
+            scale:0.4;
+        }
+    }
 }

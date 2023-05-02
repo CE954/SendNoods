@@ -2,9 +2,14 @@ import './index.scss';
 import ProductIndexItem from '../ProductIndexItem';
 import { useSelector } from 'react-redux';
 import { getProducts } from '../../store/products';
+import { useEffect } from 'react';
 
 const SearchPage = () => {
     const products = useSelector(getProducts);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     let searchItems;
     if (products.length > 0) {
