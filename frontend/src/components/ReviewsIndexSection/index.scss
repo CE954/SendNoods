@@ -1,8 +1,7 @@
 .reviews-index {
-    height: 100vh;
     width: 100vw;
     background: #BDDABD;
-    overflow: scroll;
+    height: fit-content;
 }
 
 #reviews-header {
@@ -26,6 +25,7 @@
     font-family: 'T-Star Regular'; 
     font-size: 2em;
     margin: 0.5em;
+    margin-bottom: 2em;
 }
 
 #add-review-container {

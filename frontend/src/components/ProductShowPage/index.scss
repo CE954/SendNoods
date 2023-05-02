@@ -182,3 +182,68 @@
         height: 53vh
     }
 }
+
+#headlines-section {
+    height: 100vh;
+    background: #ffb8b0;
+    height: fit-content;
+    overflow: hidden;
+}
+
+#headlines-title {
+    text-align: center;
+    padding: 2em;
+    padding-bottom: 0.5em;
+    font-size: 1.5em;
+    font-family: 'T-Star Regular';
+}
+
+#headlines-text {
+    align-items: center;
+    font-size: 2.3em;
+    font-family: T-Star Bold;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    letter-spacing: 0.06em;
+    justify-content: center;
+    width: 80vw;
+    margin: auto;
+    padding: 1em;
+
+    img {
+        scale: 0.7;
+        width: 5vw;
+        transform: translate(0.5em, 0.5em);
+    }
+
+    li {
+        list-style-type: none;
+        margin-bottom: 1em;
+    }
+}
+
+@media all and (max-width: 1090px) {
+    #headlines-text {
+        font-size: 2.5em;
+        grid-template-columns: 100%;
+        // text-align: center;
+        width: 100%;
+        padding: 2em 1em;
+        margin: 0;
+    }
+
+    img {
+        scale: 1;
+    }
+}
+
+@media all and (max-width: 775px) {
+    #headlines-text {
+        font-size: 1.6em;
+        padding-top: 1.5em;
+        img {
+            scale: 1.3;
+            transform: translate(0, 0);
+        }
+    }
+}
