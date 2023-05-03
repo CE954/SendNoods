@@ -24,7 +24,7 @@ const NavBar = () => {
     const navColor = () => {
         switch (location.pathname) {
             case '/':
-                return 'orange';
+                return 'yellow';
             case '/login':
                 return 'white';
             case '/signup':

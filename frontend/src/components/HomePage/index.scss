@@ -15,7 +15,7 @@
     width: 100%;
     font-family: T-Star Regular;
     font-size: 1.5em;
-    background-color: var(--main-orange);
+    background-color: var(--main-yellow);
     padding-top: 2vh;
 
     #splash-text {
@@ -48,7 +48,7 @@
                 transition: 0.5s;
 
                 &:hover {
-                    background-color: var(--main-orange);
+                    background-color: var(--main-yellow);
                     color: var(--off-black);
                     border: 1px solid var(--off-black);
                 }
@@ -282,6 +282,7 @@ svg.text-path-2 {
         cursor: pointer;
         }
         scale:0.8;
+        display: none;
     }
 }
 
@@ -347,8 +348,26 @@ svg.text-path-2 {
         }
     }
 }
+
+.nood-video {
+    height: 35em;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
     
-@media all and (max-width: 950px) {
+@media all and (max-width: 980px) {
     .nood {
         .nood-header {
             font-size: 2.5em;
@@ -357,7 +376,18 @@ svg.text-path-2 {
     .nood-image {
         height: 25em;
         img {
-            scale:0.4;
+            scale: 0.4;
+            display: block;
         }
+    }
+
+    .nood-video {
+        display: none;
+    }
+}
+
+@media all and (max-width: 500px) {
+    #nood-pic {
+        scale: 0.25;
     }
 }
