@@ -26,9 +26,14 @@ const SignupFormPage = () => {
                 } catch {
                     data = await res.text();
                 }
-                if (data?.errors) setErrors(data.errors);
-                else if (data) setErrors([data]);
-                else setErrors([res.statusText]);
+                if (data?.errors) {
+                    const errorMessages = data.errors.map((error) => error.msg);
+                    setErrors(errorMessages);
+                } else if (data) {
+                    setErrors(data);
+                } else {
+                    setErrors(res.statusText);
+                }
         });
     }
 
