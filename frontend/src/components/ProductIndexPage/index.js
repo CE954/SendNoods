@@ -10,6 +10,10 @@ const ProductIndexPage = () => {
     const dispatch = useDispatch();
     const products = useSelector(getProducts);
     const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     
     useEffect(() => {
         dispatch(fetchProducts())
