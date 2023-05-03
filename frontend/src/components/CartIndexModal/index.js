@@ -95,7 +95,7 @@ const CartMenu = () => {
         </div>
         <div id='checkout-modal'>
             <GrFormClose onClick={handleModalClose} id='close-modal'/>
-            <h1 id='modal-header'>PEACE, LOVE, AND NOODLES</h1>
+            <h1 id='modal-header'>PEACE, LOVE AND NOODLES</h1>
             <p>Thank you for your purchase! We hope our noods put a big smile on your face</p>
         </div>
         <div id='cart-background'/>

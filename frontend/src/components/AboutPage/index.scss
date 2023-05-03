@@ -1,0 +1,199 @@
+.about-carl {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffb8b0;
+    display: flex;
+}
+
+#carl-pic {
+    padding-top: 8em;
+    padding-left: 3em;
+    img {
+        width: 32em;
+        border-radius: 2em;
+    }
+}
+
+#carl-info {
+    padding-top: 16em;
+    width: 45em;
+    padding-left: 2em;
+
+    h1 {
+        font-size: 5em;
+        font-family: T-Star Bold;
+        margin-bottom: 0.2em;
+    }
+
+    div {
+        font-family: T-Star Regular;
+        font-size: 1.3em;
+        line-height: 1.3;
+        padding-right: 1.8em;
+    }
+}
+
+.about-me {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--main-yellow);
+    display: flex;
+}
+
+#me-pic {
+    padding-top: 6em;
+    padding-left: 4em;
+    padding-right: 5em;
+    img {
+        width: 28em;
+        border-radius: 2em;
+    }
+}
+
+#me-info {
+    padding-left: 3.5em;
+    padding-top: 12em;
+
+    h1 {
+        font-size: 5em;
+        font-family: T-Star Bold;
+        margin-bottom: 0.2em;
+    }
+
+    div {
+        font-family: T-Star Regular;
+        font-size: 1.3em;
+        line-height: 1.3;
+    }
+}
+
+#me-text {
+    a {
+        text-decoration: none;
+    }
+}
+
+.our-mission {
+    height: 22em;
+    width: 100vw;
+    background-color: #bddabd;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+        font-size: 1.5em;
+        font-family: T-Star Regular;
+        margin-bottom: 0.2em;
+        padding-top: 1.8em;
+        padding-bottom: 2em;
+    }
+
+    div {
+        font-size: 2.5em;
+        font-family: T-Star Bold;
+        max-width: 17em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    img {
+        position: absolute;
+        scale: 0.5;
+        right: 0;
+        bottom: -140%;
+    }
+}
+
+@media all and (max-width: 1110px) {
+    #carl-info {
+        h1 {
+            font-size: 3.5em;
+        }
+
+        div {
+            font-size: 1.2em;
+        }
+    }
+
+    #me-info {
+        h1 {
+            font-size: 3.5em;
+        }
+
+        div {
+            font-size: 1.2em;
+        }
+    }
+}
+
+@media all and (max-width: 945px) {
+
+    .about-carl {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
+    #carl-info {
+        padding-top: 1em;
+        width: 45em;
+        padding-left: 2em;
+        padding-bottom: 2em;
+        width: 85%;
+        h1 {
+            font-size: 2.2em;
+        }
+
+        div {
+            font-size: 1.2em;
+        }
+    }
+
+    #carl-pic {
+        padding-left: 0em;
+        padding-top: 6em;
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            width: 22em;
+        }
+    }
+
+    #me-info {
+        padding-top: 2em;
+        padding-left: 0em;
+        width: 80%;
+        h1 {
+            font-size: 2.2em;
+        }
+
+        div {
+            font-size: 1.2em;
+        }
+    }
+
+    #me-pic {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        padding-left: 0;
+        padding-right: 0;
+        img {
+            width: 22em;
+        }
+    }
+
+    .our-mission {
+        img {
+            display: none;
+        }
+    }
+}

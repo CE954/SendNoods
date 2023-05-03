@@ -33,6 +33,8 @@ const NavBar = () => {
                 return 'white';
             case '/products':
                 return 'white';
+            case '/about':
+                return 'red';
             default: 
                 return 'white';
         }
