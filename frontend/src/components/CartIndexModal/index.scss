@@ -55,6 +55,7 @@
     font-family: T-Star Bold;
     background-color: #ffffff;
     border: 2px solid var(--off-black);
+    color: var(--off-black);
     transition: 0.5s;
     text-align: center;
     letter-spacing: 0.03em;
@@ -89,6 +90,7 @@
 }
 
 #cart-menu-checkout {
+    color: var(--off-black);
     font-family: T-Star Bold;
     background-color: #ffffff;
     border: 2px solid var(--off-black);

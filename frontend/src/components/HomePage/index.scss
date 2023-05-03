@@ -303,7 +303,6 @@ svg.text-path-2 {
         color: var(--off-black);
         background: transparent;
         border: 2px solid var(--off-black);
-        transition: 0.5s;
         text-align: center;
         letter-spacing: 0.03em;
         border-radius: 5vw;
@@ -311,7 +310,7 @@ svg.text-path-2 {
         margin-top: auto;
         font-size: 1em;
         padding: 1.5vh 5vw;
-        transition: visibility 0s, opacity 1s ease-in-out;
+        transition: visibility 0s, background-color 0.5s, opacity 1s ease-in-out;
         opacity: 0;
         visibility: hidden;
     
