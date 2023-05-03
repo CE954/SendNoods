@@ -17,6 +17,7 @@ require 'open-uri'
   ApplicationRecord.connection.reset_pk_sequence!('users')
   ApplicationRecord.connection.reset_pk_sequence!('products')
   ApplicationRecord.connection.reset_pk_sequence!('cart_items')
+  ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
   puts "creating demo user..."
   User.create!(

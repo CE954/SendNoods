@@ -25,22 +25,14 @@ const ReviewsIndexItem = ({ review, openEdit, setCurrentReview, currentReview })
     }, [review, setCurrentReview, user, userId]);
 
     const handleDeleteReview = async () => {
-        try {
             setCurrentReview({});
-            
-            console.log(id)
             const response = dispatch(deleteReview(id));
 
-            if (response.ok) {
-                const updatedData = await response.json();
-                fetchReviews(updatedData);
-                setRemoved(true);
-            } else {
-                throw new Error("Failed to delete review.");
-            }
-        } catch (error) {
-            console.log(error);
-        }
+        if (response.ok) {
+            const updatedData = await response.json();
+            fetchReviews(updatedData);
+            setRemoved(true);
+        } 
     };
     
     return (
