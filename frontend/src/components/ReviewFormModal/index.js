@@ -22,8 +22,6 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
 
     useEffect(() => {
         if (Object.keys(currentReview).length !== 0) {
-            setRating(currentReview.rating);
-            setActiveRating(currentReview.rating);
             setIsNewReview(false);
         } else {
             setIsNewReview(true);
@@ -31,10 +29,20 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     }, [currentReview]);
 
     useEffect(() => {
-        if (currentReview) {
+        if (currentReview.body !== undefined) {
             setBody(currentReview.body);
         } else {
             setBody('');
+        }
+    }, [currentReview]);
+
+    useEffect(() => {
+        if (currentReview.rating !== undefined) {
+            setRating(currentReview.rating);
+            setActiveRating(currentReview.rating);
+        } else {
+            setRating(0);
+            setActiveRating(0);
         }
     }, [currentReview]);
 

@@ -5,18 +5,13 @@ import { useSelector } from 'react-redux';
 import { AiFillDelete } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { deleteReview } from '../../store/reviews';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { fetchReviews } from '../../store/reviews';
 
 const ReviewsIndexItem = ({ review, openEdit, setCurrentReview, currentReview }) => {
     const { body, id, name, productId, rating, userId } = review;
     const user = useSelector(state => state.session.user);
-    const [removed, setRemoved] = useState(false);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchReviews(productId));
-    }, [removed])
 
     useEffect(() => {
         if (user && user.id === userId) {
@@ -31,7 +26,6 @@ const ReviewsIndexItem = ({ review, openEdit, setCurrentReview, currentReview })
         if (response.ok) {
             const updatedData = await response.json();
             fetchReviews(updatedData);
-            setRemoved(true);
         } 
     };
     
