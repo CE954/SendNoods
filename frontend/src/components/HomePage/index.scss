@@ -70,6 +70,21 @@
     background-color: rgb(255, 227, 148);
 }
 
+.splash-4 {
+    height: 70vh;
+    width: 100%;
+    background-color: #ffb8b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: T-Star Regular;
+
+    h1 {
+        font-size: 1.3em;
+    }
+}
+
 .press-wrapper {
     padding: 2vh 0; 
     height: 15vh;
@@ -175,6 +190,38 @@ svg.text-path-2 {
     margin-left: 2.5em;
     width: 100%;
     overflow-x: hidden; 
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: var(--off-black);
+    opacity: 1;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    scale: 2.5;
+}
+
+.review-text {
+    font-family: T-Star Regular;
+    color: var(--off-black);
+    height: 25em;
+    margin-top: 4em;
+
+    p {
+        font-size: 3em;
+        font-family: T-Star Bold;
+        margin-bottom: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+.reviews-swiper {
+        width: 45em;
+        text-align: center;
+        letter-spacing: 0.15em;
 }
 
 @media all and (max-width: 1090px) {
@@ -327,7 +374,7 @@ svg.text-path-2 {
         max-width: 8em;
         text-align: center;
         margin-top: 0.3em;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.2em;
         transition: visibility 0s, opacity 1s ease-in-out;
         opacity: 0;
         visibility: hidden;
@@ -388,5 +435,31 @@ svg.text-path-2 {
 @media all and (max-width: 500px) {
     #nood-pic {
         scale: 0.25;
+    }
+}
+
+@media all and (max-width: 710px) {
+    .review-text {
+        p {
+            font-size: 1.9em;
+            max-width: 1000%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .reviews-swiper {
+        width: 90%;
+    }
+
+    .swiper {
+        margin-bottom: 2em;
     }
 }
