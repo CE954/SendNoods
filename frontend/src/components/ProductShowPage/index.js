@@ -144,6 +144,16 @@ const ProductShowPage = () => {
                     <img src={nutrition} id='nutrition-pic'/>
                 </div>
             </div>
+            <div id='product-anim' style={{ paddingTop: 0 }}>
+                <div id='product-slider'>
+                    <p>
+                        #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
+                    </p>
+                    <p>
+                        #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~ #SENDNOODS ~
+                    </p>
+                </div>
+            </div>
         </>
     )
 }
