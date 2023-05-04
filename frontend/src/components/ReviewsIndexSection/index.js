@@ -15,7 +15,10 @@ const ReviewsIndexSection = () => {
     const [currentReview, setCurrentReview] = useState({});
     const history = useHistory();
 
-    
+    useEffect(() => {
+        setCurrentReview({});
+    }, [productId]);
+
     useEffect(() => {
         const abortController = new AbortController();
         const signal = abortController.signal;
