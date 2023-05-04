@@ -34,9 +34,7 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
         } else {
             setBody('');
         }
-    }, [currentReview]);
 
-    useEffect(() => {
         if (currentReview.rating !== undefined) {
             setRating(currentReview.rating);
             setActiveRating(currentReview.rating);
@@ -44,6 +42,7 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
             setRating(0);
             setActiveRating(0);
         }
+
     }, [currentReview]);
 
     const starRating = () => {
