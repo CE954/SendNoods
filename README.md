@@ -37,7 +37,7 @@ SendNoods is a website clone of vegan instant-noodle company, [Future Noodles](h
 ![Screen Shot 2023-05-04 at 10 55 58 AM](https://user-images.githubusercontent.com/114632709/236288788-ff0362e6-7cb2-4315-9c13-1686c26d4f2a.png)
 
 **Responsive Design**
-- SendNoods was designed to be responsive and adjust to many screen sizes and platforms.
+- SendNoods was designed to be responsive and adjust to many screen sizes.
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/114632709/236304405-7b78d06a-faef-42da-9f27-23750d616123.gif)
 
 ## Code Highlights
