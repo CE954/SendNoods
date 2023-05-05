@@ -16,7 +16,7 @@ SendNoods is a website clone of vegan instant-noodle company, [Future Noodles](h
 - React/Redux
 - Ruby on Rails
 - JavaScript/Jbuilder/AJAX
-- HTML 5 and CSS/SCSS
+- HTML5 and CSS/SCSS
 
 ## Features
 **User Authentication: Login/Signup**
