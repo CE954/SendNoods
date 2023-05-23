@@ -6,7 +6,6 @@ import { getCartItems, fetchCartItems, deleteCartItem } from '../../store/cartIt
 import { GrFormClose } from 'react-icons/gr';
 import CartIndexItem from '../CartIndexItem';
 import noodles from '../../assets/smoky-noods.jpg';
-import { fetchProducts } from '../../store/products';
 
 const CartMenu = () => {
     const dispatch = useDispatch();

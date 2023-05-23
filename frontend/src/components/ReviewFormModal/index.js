@@ -79,6 +79,7 @@ const ReviewFormModal = ({setCurrentReview, currentReview}) => {
     
     const closeReviewModal = () => {
         const form = document.getElementById('review-background');
+        setErrors([]);
         form.style.display = 'none';
     };
 

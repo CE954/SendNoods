@@ -3,6 +3,7 @@ import ProductIndexItem from '../ProductIndexItem';
 import { useSelector } from 'react-redux';
 import { getProducts } from '../../store/products';
 import { useEffect } from 'react';
+import { fetchProducts } from '../../store/products';
 
 const SearchPage = () => {
     const products = useSelector(getProducts);
